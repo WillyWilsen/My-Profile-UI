@@ -32,16 +32,16 @@ export default function Home() {
         <header className={custom.header}>
           <div className={`${custom.container} container`}>
               <ul className={`${custom.socialicons} pt-3`}>
-                  <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="https://github.com/TubesForLyfe" target="_blank"><Image src="/icon/WhiteGithub.png" width={30} height={30} /></a></li>
-                  <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="mailto: willywilsen.ww@gmail.com" target="_blank"><Image src="/icon/WhiteEmail.png" width={30} height={30} /></a></li>
-                  <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="https://www.linkedin.com/in/willywilsen/" target="_blank"><Image src="/icon/WhiteLinkedIn.png" width={30} height={30} /></a></li>
-                  <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="https://wa.me/6281949467344" target="_blank"><Image src="/icon/WhiteWhatsapp.png" width={30} height={30} /></a></li>
+                  <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://github.com/TubesForLyfe" target="_blank"><Image alt="Github" title="Github" src="/icon/WhiteGithub.png" width={30} height={30} /></a></li>
+                  <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="mailto: willywilsen.ww@gmail.com" target="_blank"><Image alt="Email" title="Email" src="/icon/WhiteEmail.png" width={30} height={30} /></a></li>
+                  <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://www.linkedin.com/in/willywilsen/" target="_blank"><Image alt="LinkedIn" title="LinkedIn" src="/icon/WhiteLinkedIn.png" width={30} height={30} /></a></li>
+                  <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://wa.me/6281949467344" target="_blank"><Image alt="Whatsapp" title="Whatsapp" src="/icon/WhiteWhatsapp.png" width={30} height={30} /></a></li>
               </ul>  
               <div className={custom.headercontent}>
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
                   <h6 className={custom.headermono} >Full Stack Engineer | Project Manager</h6>
-                  <a href="https://drive.google.com/file/d/1kpX7cT71eWRhwAW1v4x3-QaVQcaj64hC/view?usp=sharing" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
+                  <a rel="noreferrer" href="https://drive.google.com/file/d/1kpX7cT71eWRhwAW1v4x3-QaVQcaj64hC/view?usp=sharing" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
         </header>
@@ -52,7 +52,7 @@ export default function Home() {
                     <h3 className={`${custom.fontweightlight}`}>Who am I ?</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <p className="mt-20">I am a <b>Full Stack Engineer</b> who is experienced in website development and able to learn and adjust to new environments and technologies. I am also a <b>Project Manager</b> who has a lot of experience being a team leader in completing projects. In addition, I have the ability to communicate and teach others about technology.</p>
-                    <a href="https://drive.google.com/file/d/1kpX7cT71eWRhwAW1v4x3-QaVQcaj64hC/view?usp=sharing" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
+                    <a rel="noreferrer" href="https://drive.google.com/file/d/1kpX7cT71eWRhwAW1v4x3-QaVQcaj64hC/view?usp=sharing" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>
@@ -65,17 +65,17 @@ export default function Home() {
                         <li><span>Country</span> :  Indonesia</li>
                     </ul>
                     <ul className={`${custom.socialicons} pt-3`}>
-                        <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="https://github.com/TubesForLyfe" target="_blank"><Image src="/icon/RedGithub.png" width={30} height={30} /></a></li>
-                        <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="mailto: willywilsen.ww@gmail.com" target="_blank"><Image src="/icon/RedEmail.png" width={30} height={30} /></a></li>
-                        <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="https://www.linkedin.com/in/willywilsen/" target="_blank"><Image src="/icon/RedLinkedIn.png" width={30} height={30} /></a></li>
-                        <li className={`${custom.socialicons}`}><a className={`${custom.sociallink}`} href="https://wa.me/6281949467344" target="_blank"><Image src="/icon/RedWhatsapp.png" width={30} height={30} /></a></li>
+                        <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://github.com/TubesForLyfe" target="_blank"><Image alt="Github" title="Github" src="/icon/RedGithub.png" width={30} height={30} /></a></li>
+                        <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="mailto: willywilsen.ww@gmail.com" target="_blank"><Image alt="Email" title="Email" src="/icon/RedEmail.png" width={30} height={30} /></a></li>
+                        <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://www.linkedin.com/in/willywilsen/" target="_blank"><Image alt="LinkedIn" title="LinkedIn" src="/icon/RedLinkedIn.png" width={30} height={30} /></a></li>
+                        <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://wa.me/6281949467344" target="_blank"><Image alt="Whatsapp" title="Whatsapp" src="/icon/RedWhatsapp.png" width={30} height={30} /></a></li>
                     </ul>  
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>My Expertise</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <div className={custom.row}>
-                        <div className="col-1 text-danger pt-1"><Image src="/icon/ProblemSolving.png" width={30} height={30} /></div>
+                        <div className="col-1 text-danger pt-1"><Image alt="ProblemSolving" src="/icon/ProblemSolving.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
                             <h6>Problem Solving</h6>
                             <p>A problem must have a solution.</p>
@@ -83,7 +83,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={custom.row}>
-                        <div className="col-1 text-danger pt-1"><Image src="/icon/Code.png" width={30} height={30} /></div>
+                        <div className="col-1 text-danger pt-1"><Image alt="Code" src="/icon/Code.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
                             <h6>Programming</h6>
                             <p>An application needs efficient source code.</p>
@@ -91,7 +91,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={custom.row}>
-                        <div className="col-1 text-danger pt-1"><Image src="/icon/ProjectManager.png" width={30} height={30} /></div>
+                        <div className="col-1 text-danger pt-1"><Image alt="ProjectManager" src="/icon/ProjectManager.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
                             <h6>Project Manager</h6>
                             <p>A project must run according to timeline.</p>
@@ -216,13 +216,13 @@ export default function Home() {
                   {projects.map(project => {
                     return (
                       <div key={project._id} className="col-md-4 col-sm-6">
-                          <a href={project.link} target="_blank" className={custom.notunderline}>
+                          <a rel="noreferrer" href={project.link} target="_blank" className={custom.notunderline}>
                               <div className={`${custom.card} mb-5`}>
                                 <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                      <Image src="/icon/Project.png" width={30} height={30} />
+                                      <Image alt="Project" src="/icon/Project.png" width={30} height={30} />
                                   </div>
                                   <div className={`${custom.cardbody} px-4 py-3`}>
-                                      <Image src={project.image_path} width="100%" height="100%" layout="responsive" objectFit="contain" />
+                                      <Image alt="ProjectImage" src={project.image_path} width="100%" height="100%" layout="responsive" objectFit="contain" />
                                       <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>{project.title}</h5>
                                       <p className="subtitle">
                                         {project.description}

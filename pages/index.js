@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import custom from '../styles/custom.module.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import Head from "next/head"
+import Image from "next/image"
+import styles from "../styles/Home.module.css"
+import custom from "../styles/custom.module.css"
+import "bootstrap/dist/css/bootstrap.css"
 
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from "react"
+import axios from "axios"
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
@@ -120,7 +120,7 @@ export default function Home() {
                               <p className="subtitle">
                                 Due to my full stack and good management skills, I was promoted to be a leader for Full Stack Engineer Team. I became a project 
                                 manager and coordinated with all developers to monitor progress of their projects. I also made Entity Relational Diagram and Critical Path 
-                                Method for Zinergo's entire project.
+                                Method for Zinergo"s entire project.
                               </p>
                               <hr></hr>
                               <h6 className="title text-danger">May 2022 - Sep 2022</h6>

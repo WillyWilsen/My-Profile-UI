@@ -156,7 +156,7 @@ export default function Home() {
                           </div>
                           <div className={custom.cardbody}>
                               <h6 className="title text-danger">2020</h6>
-                              <p><b>Bandung Instite of Technology</b></p>
+                              <p><b>Bandung Institute of Technology</b></p>
                               <p className="subtitle">Bachelor of Engineering, Computer Science</p>
                           </div>
                       </div>

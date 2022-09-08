@@ -4,7 +4,22 @@ import styles from '../styles/Home.module.css'
 import custom from '../styles/custom.module.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+
 export default function Home() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
+  const getProjects = async () => {
+    await axios.get(`${process.env.NEXT_PUBLIC_PROFILE_API_KEY}/project`).then(response => {
+      setProjects(response.data);
+    });
+  }
+
   return (
     <div>
       <Head>
@@ -198,171 +213,26 @@ export default function Home() {
           <div className="container">
               <h2 className="mb-5 pb-4"><span className="text-danger">My</span> Latest Projects</h2>
               <div className="row">
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://bnmo.herokuapp.com/" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
+                  {projects.map(project => {
+                    return (
+                      <div key={project._id} className="col-md-4 col-sm-6">
+                          <a href={project.link} target="_blank" className={custom.notunderline}>
+                              <div className={`${custom.card} mb-5`}>
+                                <div className={`${custom.cardheader} ${custom.hasicon}`}>
+                                      <Image src="/icon/Project.png" width={30} height={30} />
+                                  </div>
+                                  <div className={`${custom.cardbody} px-4 py-3`}>
+                                      <Image src={project.image_path} width="100%" height="100%" layout="responsive" objectFit="contain" />
+                                      <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>{project.title}</h5>
+                                      <p className="subtitle">
+                                        {project.description}
+                                      </p>
+                                  </div>
                               </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/BNMO.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>BNMO Website</h5>
-                                  <p className="subtitle">
-                                    BNMO website is created using ReactJS with CI/CD, Java Spring Boot with Docker and CI/CD, and PostgreSQL. 
-                                    This website is also created using Authorization Bearer Token, API Caching, API Documentation (Swagger), and deployed on Heroku. 
-                                    This website consists of admin and customer roles. Customer can register, request balance additions, view profile and balance 
-                                    information, transfer balances to other customer, view the history of balance addition requests along with the status and verification 
-                                    time of the request, and view transaction history. Admin can verify customer, verify balance additions, and search for customer data
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://github.com/TubesForLyfe/IMPT-Report" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/IMPT_report.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>IMPT Report Website (Excel Feature)</h5>
-                                  <p className="subtitle">
-                                    IMPT Report website is created by PT Adaro Indonesia using VueJS, Laravel, and
-                                    PostgreSQL. As a Full Stack Engineer in Zinergo, I continued to build their website by adding 8 export excel features where the excel 
-                                    datas are taken from database. Some excel features are automatically sent by email.
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://github.com/TubesForLyfe/MST-Based-Clustering-UI" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/MST-Based_Clustering.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>MST-Based Clustering Website</h5>
-                                  <p className="subtitle">
-                                    MST-Based Clustering website is created using ReactJS with Typescript and Docker, Go with
-                                    Docker and CI/CD, and MySQL. MST-Based Clustering is one of the most widely used unsupervised algorithms in machine learning. 
-                                    If given a dataset with n random points, this algorithm will build a Minimum Spanning Tree (MST), then group the data by cutting the 
-                                    edge of the MST starting from the side with the largest weight. The number of edges that are cut determines the number of clusters to 
-                                    be created, for every n clusters there will be a maximum of n-1 edge cutting.
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://github.com/TubesForLyfe/Buzzer-Checker" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/Buzzer_Checker.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>Buzzer Checker Website</h5>
-                                  <p className="subtitle">
-                                    Buzzer Checker website is created using VueJS and Flask to check a twitter username is a buzzer 
-                                    account or not. The checking process begins by dividing the account into three-dimensional vector then the vector is compared with 
-                                    the vector of a buzzer account
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://nim-finder.netlify.app/" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/NIM_Finder.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>NIM Finder Website</h5>
-                                  <p className="subtitle">
-                                    NIM Finder website is created using ReactJS and Progressive Web App (PWA) to find Bandung Institute of 
-                                    Technology student identity by student ID number, department/major and year of className, and name.
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://tesdnanamanyamauapa.netlify.app/" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/DNA.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>DNA Website</h5>
-                                  <p className="subtitle">
-                                    DNA website is created using ReactJS, Go, and MySQL. Users can add new diseases to the database. Users can 
-                                    also predict disease by inputting the patient's DNA and provide results with a certain percent match. Users can also search for 
-                                    disease prediction history
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://ibu2canggih.id/" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/IbuCanggih.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>Ibu Canggih Website</h5>
-                                  <p className="subtitle">
-                                    Ibu Canggih website is created using ReactJS, Node.js, and MySQL. Users can edit profiles and add 
-                                    reward points on the page provided by filling in the required data. This website can display the total points that have been earned by 
-                                    the user and details of each valid and invalid reward point. The website also has admin features that can manage users, whatsapp 
-                                    groups, events, articles, and banners.
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://github.com/TubesForLyfe/Prediksi-Peserta-Vaksinasi" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/Vaccination_Prediction.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>Vaccination Participant Prediction Website</h5>
-                                  <p className="subtitle">
-                                    Vaccination Participant Prediction website is created using Shiny script in R language to 
-                                    make predictions about vaccination participants using Markov Average-based Weighted 
-                                    Fuzzy Time Series model.
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div className="col-md-4 col-sm-6">
-                      <a href="https://github.com/TubesForLyfe/Algeo02-20137" target="_blank" className={custom.notunderline}>
-                          <div className={`${custom.card} mb-5`}>
-                            <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                  <Image src="/icon/Project.png" width={30} height={30} />
-                              </div>
-                              <div className={`${custom.cardbody} px-4 py-3`}>
-                                  <Image src="/projects/Image_Compressor.png" width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>Image Compressor Website</h5>
-                                  <p className="subtitle">
-                                    Image Compressor website is created using Flask to compress selected images with the desired 
-                                    compression percentage.
-                                  </p>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
+                          </a>
+                      </div>
+                    )
+                  })}
               </div>
           </div>
         </section>

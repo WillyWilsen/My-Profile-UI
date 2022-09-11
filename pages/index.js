@@ -53,7 +53,7 @@ export default function Home() {
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
                   <h6 className={custom.headermono} >Full Stack Engineer | Project Manager</h6>
-                  <a rel="noreferrer" href="https://drive.google.com/file/d/1kpX7cT71eWRhwAW1v4x3-QaVQcaj64hC/view?usp=sharing" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
+                  <a rel="noreferrer" href="https://drive.google.com/file/d/1v2Nmei3eijcLD1pgmGzAhYJul2I02sPs/view?usp=sharing" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
         </header>
@@ -64,7 +64,7 @@ export default function Home() {
                     <h3 className={`${custom.fontweightlight}`}>Who am I ?</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <p className="mt-20">I am a <b>Full Stack Engineer</b> who is experienced in website development and able to learn and adjust to new environments and technologies. I am also a <b>Project Manager</b> who has a lot of experience being a team leader in completing projects. In addition, I have the ability to communicate and teach others about technology.</p>
-                    <a rel="noreferrer" href="https://drive.google.com/file/d/1kpX7cT71eWRhwAW1v4x3-QaVQcaj64hC/view?usp=sharing" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
+                    <a rel="noreferrer" href="https://drive.google.com/file/d/1v2Nmei3eijcLD1pgmGzAhYJul2I02sPs/view?usp=sharing" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>
@@ -135,7 +135,7 @@ export default function Home() {
                                     <p className="subtitle">
                                       {workExperience.description}
                                     </p>
-                                    <hr></hr>
+                                    {workExperience._id !== workExperiences[workExperiences.length - 1]._id && <hr></hr>}
                                   </div>
                                 )
                               })}

@@ -8,14 +8,26 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function Home() {
+  const [workExperiences, setWorkExperiences] = useState([]);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
+    getWorkExperiences();
     getProjects();
   }, []);
 
+  const getWorkExperiences = async () => {
+    await axios.get(`${process.env.NEXT_PUBLIC_PROFILE_API}/work-experience`, {
+      headers: { 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}` }
+    }).then(response => {
+      setWorkExperiences(response.data);
+    });
+  }
+
   const getProjects = async () => {
-    await axios.get(`${process.env.NEXT_PUBLIC_PROFILE_API_KEY}/project`).then(response => {
+    await axios.get(`${process.env.NEXT_PUBLIC_PROFILE_API}/project`, {
+      headers: { 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}` }
+    }).then(response => {
       setProjects(response.data);
     });
   }
@@ -115,34 +127,18 @@ export default function Home() {
                               </div>
                           </div>
                           <div className={custom.cardbody}>
-                              <h6 className={`${custom.title} text-danger`}>Jun 2022 - Sep 2022</h6>
-                              <p><b>Full Stack Team Leader at Zinergo</b></p>
-                              <p className="subtitle">
-                                Due to my full stack and good management skills, I was promoted to be a leader for Full Stack Engineer Team. I became a project 
-                                manager and coordinated with all developers to monitor progress of their projects. I also made Entity Relational Diagram and Critical Path 
-                                Method for Zinergo's entire project.
-                              </p>
-                              <hr></hr>
-                              <h6 className="title text-danger">May 2022 - Sep 2022</h6>
-                              <p><b>Full Stack Engineer at Zinergo</b></p>
-                              <p className="subtitle">
-                                Zinergo is a company that provides android application or website development services. As Full Stack Engineer in Zinergo, I worked on 
-                                the given project such as IMPT Report Website according to the timeline.
-                              </p>
-                              <hr></hr>
-                              <h6 className="title text-danger">Sep 2021 - Dec 2021</h6>
-                              <p><b>Lab Assistant at Introduction to Computing</b></p>
-                              <p className="subtitle">
-                                Introduction to computing is a course that teaches computational thinking to solve problems. I supervised and checked students answer 
-                                in this course lab work using Python language.
-                              </p>
-                              <hr></hr>
-                              <h6 className="title text-danger">Sep 2021 - Dec 2021</h6>
-                              <p><b>Python & Mathematics Teacher at Study Board Education</b></p>
-                              <p className="subtitle">
-                                Study Board Education is a company that provides tutoring to first-year students of the Bandung Institute of Technology. 
-                                I create learning materials in powerpoints and create exercises and quizzes as exam simulations for students.
-                              </p>
+                              {workExperiences.map(workExperience => {
+                                return (
+                                  <div key={workExperience._id}>
+                                    <h6 className={`${custom.title} text-danger`}>{workExperience.from} - {workExperience.to}</h6>
+                                    <p><b>{workExperience.job_position} at {workExperience.company}</b></p>
+                                    <p className="subtitle">
+                                      {workExperience.description}
+                                    </p>
+                                    <hr></hr>
+                                  </div>
+                                )
+                              })}
                           </div>
                       </div>
                   </div>

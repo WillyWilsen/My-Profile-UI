@@ -221,6 +221,24 @@ export default function Home() {
                               <p className="subtitle">Bachelor of Engineering, Computer Science</p>
                           </div>
                       </div>
+                      <div className={custom.card}>
+                        <div className={custom.cardheader}>
+                              <div className="mt-2">
+                                  <h4>Other Skills</h4>
+                                  <span className={custom.line}></span>  
+                              </div>
+                          </div>
+                          <div className={custom.cardbody}>
+                            <ul>
+                              <li><h6>Algorithm Strategy</h6></li>
+                              <li><h6>Test Case & Scenario</h6></li>
+                              <li><h6>Manual Testing</h6></li>
+                              <li><h6>Database Security</h6></li>
+                              <li><h6>Query Optimization</h6></li>
+                              <li><h6>Cloud Computing (Azure)</h6></li>
+                            </ul>
+                          </div>
+                      </div>
                   </div>
                   <div className="col-lg-4">
                       <div className={custom.card}>

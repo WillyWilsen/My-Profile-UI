@@ -303,3 +303,13 @@ fieldset:disabled a.btn {
 .title {
     font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1300 - 300)));
 }
+
+.projectcount {
+    margin-bottom: 15px;
+}
+
+.seemore {
+    color: #F85C70;
+    cursor: pointer;
+    margin-bottom: 30px;
+}

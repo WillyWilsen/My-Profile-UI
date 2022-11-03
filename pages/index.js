@@ -9,7 +9,10 @@ import axios from 'axios'
 
 export default function Home() {
   const [workExperiences, setWorkExperiences] = useState([]);
+  const [allProjects, setAllProjects] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [page, setPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
 
   useEffect(() => {
     getWorkExperiences();
@@ -28,8 +31,70 @@ export default function Home() {
     await axios.get(`${process.env.NEXT_PUBLIC_PROFILE_API}/project`, {
       headers: { 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}` }
     }).then(response => {
-      setProjects(response.data);
+      setAllProjects(response.data);
+      setLastPage(parseInt((response.data.length - 1) / 6) + 1)
+      let project = [];
+      for (let i = 0; i < min(6, response.data.length); i++) {
+        project.push(response.data[i]);
+      }
+      setProjects(project);
     });
+  }
+
+  const firstClick = () => {
+    if (page > 1) {
+        setPage(1);
+        const last = 1;
+        let project = [];
+        for (let i = (last - 1) * 6; i < min(allProjects.length, last * 6); i++) {
+            project[project.length] = allProjects[i];
+        }
+        setProjects(project);
+    }
+  }
+
+  const prevClick = () => {
+    if (page > 1) {
+        setPage(page - 1);
+        const next = page - 1;
+        let project = [];
+        for (let i = (next - 1) * 6; i < min(allProjects.length, next * 6); i++) {
+            project[project.length] = allProjects[i];
+        }
+        setProjects(project);
+    }
+  }
+
+  const nextClick = () => {
+    if (page < lastPage) {
+        setPage(page + 1);
+        const next = page + 1;
+        let project = [];
+        for (let i = (next - 1) * 6; i < min(allProjects.length, next * 6); i++) {
+            project[project.length] = allProjects[i];
+        }
+        setProjects(project);
+    }
+  }
+
+  const lastClick = () => {
+    if (page < lastPage) {
+        setPage(lastPage);
+        const last = lastPage;
+        let project = [];
+        for (let i = (last - 1) * 6; i < min(allProjects.length, last * 6); i++) {
+            project[project.length] = allProjects[i];
+        }
+        setProjects(project);
+    }
+  }
+
+  const min = (a, b) => {
+    if (a < b) {
+      return a;
+    } else {
+      return b;
+    }
   }
 
   return (
@@ -229,6 +294,19 @@ export default function Home() {
                       </div>
                     )
                   })}
+              </div>
+              <div className={`text-center ${custom.seemore}`}>
+                  <span className="mx-2" onClick={() => prevClick()}>{' < '}</span>
+                  {page > 1 && <span className="mx-2" onClick={() => firstClick()}>{' 1 '}</span>}
+                  {page - 2 > 1 && <span className="mx-2">{' .. '}</span>}
+                  {page - 1 > 1 && <span className="mx-2" onClick={() => prevClick()}>{` ${page - 1} `}</span>}
+
+                  <span className="mx-2"><strong>{` ${page} `}</strong></span>
+
+                  {page + 1 < lastPage && <span className="mx-2" onClick={() => nextClick()}>{` ${page + 1} `}</span>}
+                  {page + 2 < lastPage && <span className="mx-2">{' .. '}</span>}
+                  {page < lastPage && <span className="mx-2" onClick={() => lastClick()}>{` ${lastPage} `}</span>}
+                  <span className="mx-2" onClick={() => nextClick()}>{' > '}</span>
               </div>
           </div>
         </section>

@@ -6,10 +6,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Select from 'react-select'
 
 export default function Home() {
   const [workExperiences, setWorkExperiences] = useState([]);
   const [allProjects, setAllProjects] = useState([]);
+  const [filterProjects, setFilterProjects] = useState([]);
   const [projects, setProjects] = useState([]);
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
@@ -32,13 +34,42 @@ export default function Home() {
       headers: { 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}` }
     }).then(response => {
       setAllProjects(response.data);
-      setLastPage(parseInt((response.data.length - 1) / 6) + 1)
+      setFilterProjects(response.data);
+      setLastPage(parseInt((response.data.length - 1) / 9) + 1)
       let project = [];
-      for (let i = 0; i < min(6, response.data.length); i++) {
+      for (let i = 0; i < min(9, response.data.length); i++) {
         project.push(response.data[i]);
       }
       setProjects(project);
     });
+  }
+
+  const filter = async (value) => {
+    setPage(1);
+    let filterProject = [];
+    for (let i = 0; i < allProjects.length; i++) {
+      if (allProjects[i].description.indexOf(value) > -1) {
+        filterProject.push(allProjects[i]);
+      }
+    }
+    setFilterProjects(filterProject);
+    setLastPage(parseInt((filterProject.length - 1) / 9) + 1)
+    let project = [];
+    for (let i = 0; i < min(9, filterProject.length); i++) {
+      project.push(filterProject[i]);
+    }
+    setProjects(project);
+  }
+
+  const clear = async (e) => {
+    setPage(1);
+    setFilterProjects([...allProjects]);
+    setLastPage(parseInt((allProjects.length - 1) / 9) + 1)
+    let project = [];
+    for (let i = 0; i < min(9, allProjects.length); i++) {
+      project.push(allProjects[i]);
+    }
+    setProjects(project);
   }
 
   const firstClick = () => {
@@ -46,8 +77,8 @@ export default function Home() {
         setPage(1);
         const last = 1;
         let project = [];
-        for (let i = (last - 1) * 6; i < min(allProjects.length, last * 6); i++) {
-            project[project.length] = allProjects[i];
+        for (let i = (last - 1) * 9; i < min(filterProjects.length, last * 9); i++) {
+            project[project.length] = filterProjects[i];
         }
         setProjects(project);
     }
@@ -58,8 +89,8 @@ export default function Home() {
         setPage(page - 1);
         const next = page - 1;
         let project = [];
-        for (let i = (next - 1) * 6; i < min(allProjects.length, next * 6); i++) {
-            project[project.length] = allProjects[i];
+        for (let i = (next - 1) * 9; i < min(filterProjects.length, next * 9); i++) {
+            project[project.length] = filterProjects[i];
         }
         setProjects(project);
     }
@@ -70,8 +101,8 @@ export default function Home() {
         setPage(page + 1);
         const next = page + 1;
         let project = [];
-        for (let i = (next - 1) * 6; i < min(allProjects.length, next * 6); i++) {
-            project[project.length] = allProjects[i];
+        for (let i = (next - 1) * 9; i < min(filterProjects.length, next * 9); i++) {
+            project[project.length] = filterProjects[i];
         }
         setProjects(project);
     }
@@ -82,8 +113,8 @@ export default function Home() {
         setPage(lastPage);
         const last = lastPage;
         let project = [];
-        for (let i = (last - 1) * 6; i < min(allProjects.length, last * 6); i++) {
-            project[project.length] = allProjects[i];
+        for (let i = (last - 1) * 9; i < min(filterProjects.length, last * 9); i++) {
+            project[project.length] = filterProjects[i];
         }
         setProjects(project);
     }
@@ -96,6 +127,19 @@ export default function Home() {
       return b;
     }
   }
+
+  const filterOptions = [
+    { value: 'ReactJS', label: 'ReactJS' },
+    { value: 'VueJS', label: 'VueJS' },
+    { value: 'NextJS', label: 'NextJS' },
+    { value: 'ExpressJS', label: 'ExpressJS' },
+    { value: 'NestJS', label: 'NestJS' },
+    { value: 'Flask', label: 'Flask' },
+    { value: 'Go', label: 'Go' },
+    { value: 'Java Spring Boot', label: 'Java Spring Boot' },
+    { value: 'Laravel', label: 'Laravel' },
+    { value: 'CodeIgniter', label: 'CodeIgniter' }
+  ];
 
   return (
     <div>
@@ -117,7 +161,7 @@ export default function Home() {
               <div className={custom.headercontent}>
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
-                  <h6 className={custom.headermono} >Full Stack Engineer | Project Manager</h6>
+                  <h6 className={custom.headermono} >Software Engineer | Project Manager</h6>
                   <a rel="noreferrer" href="https://drive.google.com/uc?id=1v2Nmei3eijcLD1pgmGzAhYJul2I02sPs&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
@@ -128,7 +172,10 @@ export default function Home() {
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Who am I ?</h3>
                     <span className={`${custom.line} mb-5`}></span>
-                    <p className="mt-20">I am a <b>Full Stack Engineer</b> who is experienced in website development and able to learn and adjust to new environments and technologies. I am also a <b>Project Manager</b> who has a lot of experience being a team leader in completing projects. In addition, I have the ability to communicate and teach others about technology.</p>
+                    <p className="mt-20">
+                        I am a <b>Software Engineer</b> who is experienced in website development and data warehouse. I able to learn and adjust to new environments and technologies. 
+                        I am also a <b>Project Manager</b> who has experiences being a team leader in completing projects. In addition, I have the ability to communicate and teach others about technology.
+                    </p>
                     <a rel="noreferrer" href="https://drive.google.com/uc?id=1v2Nmei3eijcLD1pgmGzAhYJul2I02sPs&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
@@ -171,7 +218,7 @@ export default function Home() {
                         <div className="col-1 text-danger pt-1"><Image alt="ProjectManager" src="/icon/ProjectManager.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
                             <h6>Project Manager</h6>
-                            <p>A project must run according to timeline.</p>
+                            <p>A project should run according to timeline.</p>
                             <hr></hr>
                         </div>
                     </div>
@@ -233,9 +280,10 @@ export default function Home() {
                               <li><h6>Algorithm Strategy</h6></li>
                               <li><h6>Test Case & Scenario</h6></li>
                               <li><h6>Manual Testing</h6></li>
-                              <li><h6>Database Security</h6></li>
+                              <li><h6>Web & Database Security</h6></li>
                               <li><h6>Query Optimization</h6></li>
                               <li><h6>Cloud Computing (Azure)</h6></li>
+                              <li><h6>Artificial Intelligence</h6></li>
                             </ul>
                           </div>
                       </div>
@@ -291,6 +339,10 @@ export default function Home() {
         <section className={custom.section} id="service">
           <div className="container">
               <h2 className="mb-5 pb-4"><span className="text-danger">My</span> Latest Projects</h2>
+              <div className="d-flex flex-row mb-3">
+                  <Select options={filterOptions} className="col-md-3" placeholder="Filter by" onChange={e => filter(e.value)} />
+                  <button className='btn btn-danger ms-3' onClick={e => clear(e)}>Clear</button>
+              </div>
               <div className="row">
                   {projects.map(project => {
                     return (

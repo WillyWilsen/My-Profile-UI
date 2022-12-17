@@ -35,9 +35,9 @@ export default function Home() {
     }).then(response => {
       setAllProjects(response.data);
       setFilterProjects(response.data);
-      setLastPage(parseInt((response.data.length - 1) / 9) + 1)
+      setLastPage(parseInt((response.data.length - 1) / 6) + 1)
       let project = [];
-      for (let i = 0; i < min(9, response.data.length); i++) {
+      for (let i = 0; i < min(6, response.data.length); i++) {
         project.push(response.data[i]);
       }
       setProjects(project);
@@ -53,9 +53,9 @@ export default function Home() {
       }
     }
     setFilterProjects(filterProject);
-    setLastPage(parseInt((filterProject.length - 1) / 9) + 1)
+    setLastPage(parseInt((filterProject.length - 1) / 6) + 1)
     let project = [];
-    for (let i = 0; i < min(9, filterProject.length); i++) {
+    for (let i = 0; i < min(6, filterProject.length); i++) {
       project.push(filterProject[i]);
     }
     setProjects(project);
@@ -64,9 +64,9 @@ export default function Home() {
   const clear = async (e) => {
     setPage(1);
     setFilterProjects([...allProjects]);
-    setLastPage(parseInt((allProjects.length - 1) / 9) + 1)
+    setLastPage(parseInt((allProjects.length - 1) / 6) + 1)
     let project = [];
-    for (let i = 0; i < min(9, allProjects.length); i++) {
+    for (let i = 0; i < min(6, allProjects.length); i++) {
       project.push(allProjects[i]);
     }
     setProjects(project);
@@ -77,7 +77,7 @@ export default function Home() {
         setPage(1);
         const last = 1;
         let project = [];
-        for (let i = (last - 1) * 9; i < min(filterProjects.length, last * 9); i++) {
+        for (let i = (last - 1) * 6; i < min(filterProjects.length, last * 6); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
@@ -89,7 +89,7 @@ export default function Home() {
         setPage(page - 1);
         const next = page - 1;
         let project = [];
-        for (let i = (next - 1) * 9; i < min(filterProjects.length, next * 9); i++) {
+        for (let i = (next - 1) * 6; i < min(filterProjects.length, next * 6); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
@@ -101,7 +101,7 @@ export default function Home() {
         setPage(page + 1);
         const next = page + 1;
         let project = [];
-        for (let i = (next - 1) * 9; i < min(filterProjects.length, next * 9); i++) {
+        for (let i = (next - 1) * 6; i < min(filterProjects.length, next * 6); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
@@ -113,7 +113,7 @@ export default function Home() {
         setPage(lastPage);
         const last = lastPage;
         let project = [];
-        for (let i = (last - 1) * 9; i < min(filterProjects.length, last * 9); i++) {
+        for (let i = (last - 1) * 6; i < min(filterProjects.length, last * 6); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
@@ -338,7 +338,7 @@ export default function Home() {
         <section className={custom.section} id="service">
           <div className="container">
               <h2 className="mb-5 pb-4"><span className="text-danger">My</span> Latest Projects</h2>
-              <div className="d-flex flex-row mb-3">
+              <div className="d-flex flex-row mb-4">
                   <Select options={filterOptions} className="col-md-3" placeholder="Filter by" onChange={e => filter(e.value)} />
                   <button className='btn btn-danger ms-3' onClick={e => clear(e)}>Clear</button>
               </div>

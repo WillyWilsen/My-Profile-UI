@@ -136,7 +136,7 @@ export default function Home() {
     { value: 'NestJS', label: 'NestJS' },
     { value: 'Flask', label: 'Flask' },
     { value: 'Go', label: 'Go' },
-    { value: 'Java Spring Boot', label: 'Java Spring Boot' },
+    { value: 'Spring Boot', label: 'Spring Boot' },
     { value: 'Laravel', label: 'Laravel' },
     { value: 'CodeIgniter', label: 'CodeIgniter' }
   ];
@@ -299,20 +299,19 @@ export default function Home() {
                           <div className={`${custom.cardbody} pb-2`}>
                             <h6><b>Frontend</b></h6>
                             <ul>
-                              <li><h6>React.js</h6></li>
-                              <li><h6>Vue.js</h6></li>
-                              <li><h6>Angular.js</h6></li>
-                              <li><h6>Next.js</h6></li>
+                              <li><h6>ReactJS</h6></li>
+                              <li><h6>VueJS</h6></li>
+                              <li><h6>AngularJS</h6></li>
+                              <li><h6>NextJS</h6></li>
                             </ul>
                             <hr></hr>
                             <h6><b>Backend</b></h6>
                             <ul>
-                              <li><h6>Node.js</h6></li>
-                              <li><h6>Flask</h6></li>
-                              <li><h6>Django</h6></li>
-                              <li><h6>Go Http</h6></li>
-                              <li><h6>Java Spring Boot</h6></li>
-                              <li><h6>Laravel</h6></li>
+                              <li><h6>NodeJS (ExpressJS, NestJS)</h6></li>
+                              <li><h6>Python (Flask, Django)</h6></li>
+                              <li><h6>Go</h6></li>
+                              <li><h6>Java (Spring Boot)</h6></li>
+                              <li><h6>PHP (Laravel, CodeIgniter)</h6></li>
                             </ul>
                             <hr></hr>
                             <h6><b>Database</b></h6>

@@ -348,7 +348,7 @@ export default function Home() {
                       <div key={project._id} className="col-md-4 col-sm-6">
                           <a rel="noreferrer" href={project.link} target="_blank" className={custom.notunderline}>
                               <div className={`${custom.card} mb-5`}>
-                                <div className={`${custom.cardheader} ${custom.hasicon}`}>
+                                  <div className={`${custom.cardheader} ${custom.hasicon}`}>
                                       <Image alt="Project" src="/icon/Project.png" width={30} height={30} />
                                   </div>
                                   <div className={`${custom.cardbody} px-4 py-3`}>

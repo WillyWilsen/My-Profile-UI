@@ -137,6 +137,7 @@ export default function Home() {
     { value: 'Flask', label: 'Flask' },
     { value: 'Go', label: 'Go' },
     { value: 'Spring Boot', label: 'Spring Boot' },
+    { value: 'JAX-WS', label: 'JAX-WS' },
     { value: 'Laravel', label: 'Laravel' },
     { value: 'CodeIgniter', label: 'CodeIgniter' }
   ];
@@ -310,7 +311,7 @@ export default function Home() {
                               <li><h6>NodeJS (ExpressJS, NestJS)</h6></li>
                               <li><h6>Python (Flask, Django)</h6></li>
                               <li><h6>Go</h6></li>
-                              <li><h6>Java (Spring Boot)</h6></li>
+                              <li><h6>Java (Spring Boot, JAX-WS)</h6></li>
                               <li><h6>PHP (Laravel, CodeIgniter)</h6></li>
                             </ul>
                             <hr></hr>

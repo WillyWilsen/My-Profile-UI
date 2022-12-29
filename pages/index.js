@@ -280,9 +280,9 @@ export default function Home() {
                             <ul>
                               <li><h6>Algorithm Strategy</h6></li>
                               <li><h6>Test Case & Scenario</h6></li>
-                              <li><h6>Manual Testing</h6></li>
                               <li><h6>Web & Database Security</h6></li>
                               <li><h6>Query Optimization</h6></li>
+                              <li><h6>SOAP & REST Web Services</h6></li>
                               <li><h6>Cloud Computing (Azure)</h6></li>
                               <li><h6>Artificial Intelligence</h6></li>
                             </ul>
@@ -308,7 +308,7 @@ export default function Home() {
                             <hr></hr>
                             <h6><b>Backend</b></h6>
                             <ul>
-                              <li><h6>NodeJS (ExpressJS, NestJS)</h6></li>
+                              <li><h6>NodeJS (ExpressJS, NestJS, HapiJS)</h6></li>
                               <li><h6>Python (Flask, Django)</h6></li>
                               <li><h6>Go</h6></li>
                               <li><h6>Java (Spring Boot, JAX-WS)</h6></li>
@@ -320,6 +320,7 @@ export default function Home() {
                               <li><h6>MySQL</h6></li>
                               <li><h6>PostgreSQL</h6></li>
                               <li><h6>MongoDB</h6></li>
+                              <li><h6>Redis</h6></li>
                             </ul>
                             <hr></hr>
                             <h6><b>Others</b></h6>

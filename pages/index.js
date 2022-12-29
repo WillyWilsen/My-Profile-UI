@@ -279,6 +279,7 @@ export default function Home() {
                           <div className={custom.cardbody}>
                             <ul>
                               <li><h6>Algorithm Strategy</h6></li>
+                              <li><h6>Object Oriented Programming</h6></li>
                               <li><h6>Test Case & Scenario</h6></li>
                               <li><h6>Web & Database Security</h6></li>
                               <li><h6>Query Optimization</h6></li>

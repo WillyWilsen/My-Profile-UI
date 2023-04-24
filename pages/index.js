@@ -142,7 +142,8 @@ export default function Home() {
     { value: 'Spring Boot', label: 'Spring Boot' },
     { value: 'JAX-WS', label: 'JAX-WS' },
     { value: 'JavaFX', label: 'JavaFX' },
-    { value: 'Swing', label: 'Swing' }
+    { value: 'Swing', label: 'Swing' },
+    { value: 'Kotlin', label: 'Kotlin' }
   ];
 
   return (
@@ -165,8 +166,8 @@ export default function Home() {
               <div className={custom.headercontent}>
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
-                  <h6 className={custom.headermono} >Software Engineer | Project Manager</h6>
-                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1v2Nmei3eijcLD1pgmGzAhYJul2I02sPs&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
+                  <h6 className={custom.headermono} >Software Engineer | Data Engineer | Project Manager</h6>
+                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1OZl90rqn_2JmWdfMYRrdeol5UJlVfHqC&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
         </header>
@@ -205,16 +206,16 @@ export default function Home() {
                     <div className={custom.row}>
                         <div className="col-1 text-danger pt-1"><Image alt="ProblemSolving" src="/icon/ProblemSolving.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
-                            <h6>Problem Solving</h6>
-                            <p>A problem must have a solution.</p>
+                            <h6>Web Development</h6>
+                            <p>Experienced in developing web (Advanced).</p>
                             <hr></hr>
                         </div>
                     </div>
                     <div className={custom.row}>
                         <div className="col-1 text-danger pt-1"><Image alt="Code" src="/icon/Code.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
-                            <h6>Programming</h6>
-                            <p>An application needs efficient source code.</p>
+                            <h6>Data Engineering</h6>
+                            <p>Experienced in data engineering (Intermediate).</p>
                             <hr></hr>
                         </div>
                     </div>
@@ -222,7 +223,7 @@ export default function Home() {
                         <div className="col-1 text-danger pt-1"><Image alt="ProjectManager" src="/icon/ProjectManager.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
                             <h6>Project Manager</h6>
-                            <p>A project should run according to timeline.</p>
+                            <p>Experienced in project management (Intermediate).</p>
                             <hr></hr>
                         </div>
                     </div>
@@ -286,9 +287,10 @@ export default function Home() {
                               <li><h6>Test Case & Scenario</h6></li>
                               <li><h6>Web & Database Security</h6></li>
                               <li><h6>Query Optimization</h6></li>
-                              <li><h6>SOAP & REST Web Services</h6></li>
-                              <li><h6>Cloud Computing (Azure)</h6></li>
+                              <li><h6>SOAP, REST, & GraphQL Web Services</h6></li>
+                              <li><h6>Cloud Computing (Azure, GCP)</h6></li>
                               <li><h6>Artificial Intelligence</h6></li>
+                              <li><h6>Machine Learning</h6></li>
                             </ul>
                           </div>
                       </div>
@@ -316,8 +318,9 @@ export default function Home() {
                               <li><h6>Python (Flask, Django)</h6></li>
                               <li><h6>Go</h6></li>
                               <li><h6>PHP (Laravel, CodeIgniter)</h6></li>
-                              <li><h6>C#</h6></li>
+                              <li><h6>C# (.NET, Unity)</h6></li>
                               <li><h6>Java (Spring Boot, JAX-WS, JavaFX, Swing)</h6></li>
+                              <li><h6>Kotlin (Android Studio)</h6></li>
                             </ul>
                             <hr></hr>
                             <h6><b>Database</b></h6>
@@ -334,6 +337,7 @@ export default function Home() {
                               <li><h6>Docker</h6></li>
                               <li><h6>CI/CD</h6></li>
                               <li><h6>Typescript</h6></li>
+                              <li><h6>Ant Design</h6></li>
                             </ul>
                           </div>
                       </div>

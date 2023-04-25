@@ -181,7 +181,7 @@ export default function Home() {
                         I am a <b>Software Engineer</b> who is experienced in website development and data warehouse. I able to learn and adjust to new environments and technologies. 
                         I am also a <b>Project Manager</b> who has experiences being a team leader in completing projects. In addition, I have the ability to communicate and teach others about technology.
                     </p>
-                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1v2Nmei3eijcLD1pgmGzAhYJul2I02sPs&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
+                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1OZl90rqn_2JmWdfMYRrdeol5UJlVfHqC&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>
@@ -333,11 +333,10 @@ export default function Home() {
                             <hr></hr>
                             <h6><b>Others</b></h6>
                             <ul>
-                              <li><h6>Bootstrap</h6></li>
-                              <li><h6>Docker</h6></li>
-                              <li><h6>CI/CD</h6></li>
+                              <li><h6>Design (Bootstrap, Ant Design)</h6></li>
+                              <li><h6>DevOps (Docker, CI/CD)</h6></li>
                               <li><h6>Typescript</h6></li>
-                              <li><h6>Ant Design</h6></li>
+                              <li><h6>WebGL</h6></li>
                             </ul>
                           </div>
                       </div>

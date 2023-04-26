@@ -167,7 +167,7 @@ export default function Home() {
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
                   <h6 className={custom.headermono} >Software Engineer | Data Engineer | Project Manager</h6>
-                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1OZl90rqn_2JmWdfMYRrdeol5UJlVfHqC&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
+                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1Q1xIAOenXZ31LFPyucQ8zk6kqqF4P-ep&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
         </header>
@@ -181,7 +181,7 @@ export default function Home() {
                         I am a <b>Software Engineer</b> who is experienced in website development and data warehouse. I able to learn and adjust to new environments and technologies. 
                         I am also a <b>Project Manager</b> who has experiences being a team leader in completing projects. In addition, I have the ability to communicate and teach others about technology.
                     </p>
-                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1OZl90rqn_2JmWdfMYRrdeol5UJlVfHqC&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
+                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1Q1xIAOenXZ31LFPyucQ8zk6kqqF4P-ep&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>

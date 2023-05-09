@@ -21,6 +21,16 @@ export default function Home() {
     getProjects();
   }, []);
 
+  useEffect(() => {
+    updateProjectHTML();
+  }, [projects])
+
+  const updateProjectHTML = async () => {
+    for (let i = 0; i < projects.length; i++) {
+      document.getElementById(`project-${projects[i]._id}`).innerHTML = projects[i].description;
+    }
+  }
+
   const getWorkExperiences = async () => {
     await axios.get(`${process.env.NEXT_PUBLIC_PROFILE_API}/work-experience`, {
       headers: { 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}` }
@@ -178,8 +188,14 @@ export default function Home() {
                     <h3 className={`${custom.fontweightlight}`}>Who am I ?</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <p className="mt-20">
-                        I am a <b>Software Engineer</b> who is experienced in website development and data warehouse. I able to learn and adjust to new environments and technologies. 
-                        I am also a <b>Project Manager</b> who has experiences being a team leader in completing projects. In addition, I have the ability to communicate and teach others about technology.
+                        I am a person who is familiar in <b>software development</b>. 
+                        I am experienced in designing, developing and maintaining software. 
+                        I able to learn and adjust to new environments and technologies. 
+                        I also often do <b>data analysis</b> for <b>data warehousing</b> using SQL and Excel to define current business problem.
+                        Then, I implement the workaround steps that can be taken to solve the problem.
+                        Not only that, I also have experiences being a <b>team leader</b> in completing projects.
+                        I analyze software architectures such as designing databases, use cases, kanban boards, and monitoring work using agile methods.
+                        So, I have the ability to communicate and coordinate with others to achieve our goals.
                     </p>
                     <a rel="noreferrer" href="https://drive.google.com/uc?id=1Q1xIAOenXZ31LFPyucQ8zk6kqqF4P-ep&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
@@ -194,7 +210,7 @@ export default function Home() {
                         <li><span>Country</span> :  Indonesia</li>
                     </ul>
                     <ul className={`${custom.socialicons} pt-3`}>
-                        <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://github.com/TubesForLyfe" target="_blank"><Image alt="Github" title="Github" src="/icon/RedGithub.png" width={30} height={30} /></a></li>
+                        <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://github.com/WillyWilsen" target="_blank"><Image alt="Github" title="Github" src="/icon/RedGithub.png" width={30} height={30} /></a></li>
                         <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="mailto: willywilsen.ww@gmail.com" target="_blank"><Image alt="Email" title="Email" src="/icon/RedEmail.png" width={30} height={30} /></a></li>
                         <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://www.linkedin.com/in/willywilsen/" target="_blank"><Image alt="LinkedIn" title="LinkedIn" src="/icon/RedLinkedIn.png" width={30} height={30} /></a></li>
                         <li className={`${custom.socialicons}`}><a rel="noreferrer" className={`${custom.sociallink}`} href="https://wa.me/6281949467344" target="_blank"><Image alt="Whatsapp" title="Whatsapp" src="/icon/RedWhatsapp.png" width={30} height={30} /></a></li>
@@ -204,15 +220,15 @@ export default function Home() {
                     <h3 className={`${custom.fontweightlight}`}>My Expertise</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <div className={custom.row}>
-                        <div className="col-1 text-danger pt-1"><Image alt="ProblemSolving" src="/icon/ProblemSolving.png" width={30} height={30} /></div>
+                        <div className="col-1 text-danger pt-1"><Image alt="Code" src="/icon/Code.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
-                            <h6>Web Development</h6>
-                            <p>Experienced in developing web (Advanced).</p>
+                            <h6>Software Development</h6>
+                            <p>Experienced in developing software (Advanced).</p>
                             <hr></hr>
                         </div>
                     </div>
                     <div className={custom.row}>
-                        <div className="col-1 text-danger pt-1"><Image alt="Code" src="/icon/Code.png" width={30} height={30} /></div>
+                        <div className="col-1 text-danger pt-1"><Image alt="ProblemSolving" src="/icon/ProblemSolving.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
                             <h6>Data Engineering</h6>
                             <p>Experienced in data engineering (Intermediate).</p>
@@ -356,20 +372,20 @@ export default function Home() {
                   {projects.map(project => {
                     return (
                       <div key={project._id} className="col-md-4 col-sm-6">
-                          <a rel="noreferrer" href={project.link} target="_blank" className={custom.notunderline}>
-                              <div className={`${custom.card} mb-5`}>
-                                  <div className={`${custom.cardheader} ${custom.hasicon}`}>
-                                      <Image alt="Project" src="/icon/Project.png" width={30} height={30} />
-                                  </div>
-                                  <div className={`${custom.cardbody} px-4 py-3`}>
+                          <div className={`${custom.card} mb-5`}>
+                              <div className={`${custom.cardheader} ${custom.hasicon}`}>
+                                  <Image alt="Project" src="/icon/Project.png" width={30} height={30} />
+                              </div>
+                              <div className={`${custom.cardbody} px-4 py-3`}>
+                                  <a rel="noreferrer" href={project.link} target="_blank" className={custom.notunderline}>
                                       <Image alt="ProjectImage" src={project.image_path} width="100%" height="100%" layout="responsive" objectFit="contain" />
-                                      <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>{project.title}</h5>
-                                      <p className="subtitle">
-                                        {project.description}
-                                      </p>
+                                  </a>
+                                  <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>{project.title}</h5>
+                                  <div id={`project-${project._id}`}>
+                                      {project.description}
                                   </div>
                               </div>
-                          </a>
+                          </div>
                       </div>
                     )
                   })}

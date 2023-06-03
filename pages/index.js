@@ -272,7 +272,7 @@ export default function Home() {
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <ul className={`mt40 ${custom.info} list-unstyled`}>
-                        <li><span>Github</span> : TubesForLyfe</li>
+                        <li><span>Github</span> : WillyWilsen</li>
                         <li><span>Email</span> : willywilsen@gmail.com</li>
                         <li><span>LinkedIn</span> : Willy Wilsen </li>
                         <li><span>Phone</span> : +62 819-4946-7344</li>

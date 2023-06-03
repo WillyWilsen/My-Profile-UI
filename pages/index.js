@@ -9,12 +9,17 @@ import axios from 'axios'
 import Select from 'react-select'
 
 export default function Home() {
+  const [allWorkExperiences, setAllWorkExperiences] = useState([]);
   const [workExperiences, setWorkExperiences] = useState([]);
   const [allProjects, setAllProjects] = useState([]);
   const [filterProjects, setFilterProjects] = useState([]);
   const [projects, setProjects] = useState([]);
-  const [page, setPage] = useState(1);
-  const [lastPage, setLastPage] = useState(1);
+  const [workExperiencePage, setWorkExperiencePage] = useState(1);
+  const [lastWorkExperiencePage, setLastWorkExperiencePage] = useState(1);
+  const [projectPage, setProjectPage] = useState(1);
+  const [lastProjectPage, setLastProjectPage] = useState(1);
+  const workExperiencePerPage = 2;
+  const projectPerPage = 6;
 
   useEffect(() => {
     getWorkExperiences();
@@ -22,12 +27,22 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    updateWorkExperienceHTML();
+  }, [workExperiences])
+
+  useEffect(() => {
     updateProjectHTML();
   }, [projects])
 
+  const updateWorkExperienceHTML = async () => {
+    for (let i = 0; i < workExperiences.length; i++) {
+      document.getElementById(`work-experience_${workExperiences[i]._id}`).innerHTML = workExperiences[i].description;
+    }
+  }
+
   const updateProjectHTML = async () => {
     for (let i = 0; i < projects.length; i++) {
-      document.getElementById(`project-${projects[i]._id}`).innerHTML = projects[i].description;
+      document.getElementById(`project_${projects[i]._id}`).innerHTML = projects[i].description;
     }
   }
 
@@ -35,8 +50,62 @@ export default function Home() {
     await axios.get(`${process.env.NEXT_PUBLIC_PROFILE_API}/work-experience`, {
       headers: { 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}` }
     }).then(response => {
-      setWorkExperiences(response.data);
+      setAllWorkExperiences(response.data);
+      setLastWorkExperiencePage(parseInt((response.data.length - 1) / workExperiencePerPage) + 1)
+      let workExperience = [];
+      for (let i = 0; i < min(workExperiencePerPage, response.data.length); i++) {
+        workExperience.push(response.data[i]);
+      }
+      setWorkExperiences(workExperience);
     });
+  }
+
+  const firstWorkExperienceClick = () => {
+    if (workExperiencePage > 1) {
+        setWorkExperiencePage(1);
+        const last = 1;
+        let workExperience = [];
+        for (let i = (last - 1) * workExperiencePerPage; i < min(allWorkExperiences.length, last * workExperiencePerPage); i++) {
+            workExperience[workExperience.length] = allWorkExperiences[i];
+        }
+        setWorkExperiences(workExperience);
+    }
+  }
+
+  const prevWorkExperienceClick = () => {
+    if (workExperiencePage > 1) {
+        setWorkExperiencePage(workExperiencePage - 1);
+        const next = workExperiencePage - 1;
+        let workExperience = [];
+        for (let i = (next - 1) * workExperiencePerPage; i < min(allWorkExperiences.length, next * workExperiencePerPage); i++) {
+            workExperience[workExperience.length] = allWorkExperiences[i];
+        }
+        setWorkExperiences(workExperience);
+    }
+  }
+
+  const nextWorkExperienceClick = () => {
+    if (workExperiencePage < lastWorkExperiencePage) {
+        setWorkExperiencePage(workExperiencePage + 1);
+        const next = workExperiencePage + 1;
+        let workExperience = [];
+        for (let i = (next - 1) * workExperiencePerPage; i < min(allWorkExperiences.length, next * workExperiencePerPage); i++) {
+            workExperience[workExperience.length] = allWorkExperiences[i];
+        }
+        setWorkExperiences(workExperience);
+    }
+  }
+
+  const lastWorkExperienceClick = () => {
+    if (workExperiencePage < lastWorkExperiencePage) {
+        setWorkExperiencePage(lastWorkExperiencePage);
+        const last = lastWorkExperiencePage;
+        let workExperience = [];
+        for (let i = (last - 1) * workExperiencePerPage; i < min(allWorkExperiences.length, last * workExperiencePerPage); i++) {
+            workExperience[workExperience.length] = allWorkExperiences[i];
+        }
+        setWorkExperiences(workExperience);
+    }
   }
 
   const getProjects = async () => {
@@ -45,9 +114,9 @@ export default function Home() {
     }).then(response => {
       setAllProjects(response.data);
       setFilterProjects(response.data);
-      setLastPage(parseInt((response.data.length - 1) / 6) + 1)
+      setLastProjectPage(parseInt((response.data.length - 1) / projectPerPage) + 1)
       let project = [];
-      for (let i = 0; i < min(6, response.data.length); i++) {
+      for (let i = 0; i < min(projectPerPage, response.data.length); i++) {
         project.push(response.data[i]);
       }
       setProjects(project);
@@ -55,7 +124,7 @@ export default function Home() {
   }
 
   const filter = async (value) => {
-    setPage(1);
+    setProjectPage(1);
     let filterProject = [];
     for (let i = 0; i < allProjects.length; i++) {
       if (allProjects[i].description.indexOf(value) > -1) {
@@ -63,67 +132,67 @@ export default function Home() {
       }
     }
     setFilterProjects(filterProject);
-    setLastPage(parseInt((filterProject.length - 1) / 6) + 1)
+    setLastProjectPage(parseInt((filterProject.length - 1) / projectPerPage) + 1)
     let project = [];
-    for (let i = 0; i < min(6, filterProject.length); i++) {
+    for (let i = 0; i < min(projectPerPage, filterProject.length); i++) {
       project.push(filterProject[i]);
     }
     setProjects(project);
   }
 
   const clear = async (e) => {
-    setPage(1);
+    setProjectPage(1);
     setFilterProjects([...allProjects]);
-    setLastPage(parseInt((allProjects.length - 1) / 6) + 1)
+    setLastProjectPage(parseInt((allProjects.length - 1) / projectPerPage) + 1)
     let project = [];
-    for (let i = 0; i < min(6, allProjects.length); i++) {
+    for (let i = 0; i < min(projectPerPage, allProjects.length); i++) {
       project.push(allProjects[i]);
     }
     setProjects(project);
   }
 
-  const firstClick = () => {
-    if (page > 1) {
-        setPage(1);
+  const firstProjectClick = () => {
+    if (projectPage > 1) {
+        setProjectPage(1);
         const last = 1;
         let project = [];
-        for (let i = (last - 1) * 6; i < min(filterProjects.length, last * 6); i++) {
+        for (let i = (last - 1) * projectPerPage; i < min(filterProjects.length, last * projectPerPage); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
     }
   }
 
-  const prevClick = () => {
-    if (page > 1) {
-        setPage(page - 1);
-        const next = page - 1;
+  const prevProjectClick = () => {
+    if (projectPage > 1) {
+        setProjectPage(projectPage - 1);
+        const next = projectPage - 1;
         let project = [];
-        for (let i = (next - 1) * 6; i < min(filterProjects.length, next * 6); i++) {
+        for (let i = (next - 1) * projectPerPage; i < min(filterProjects.length, next * projectPerPage); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
     }
   }
 
-  const nextClick = () => {
-    if (page < lastPage) {
-        setPage(page + 1);
-        const next = page + 1;
+  const nextProjectClick = () => {
+    if (projectPage < lastProjectPage) {
+        setProjectPage(projectPage + 1);
+        const next = projectPage + 1;
         let project = [];
-        for (let i = (next - 1) * 6; i < min(filterProjects.length, next * 6); i++) {
+        for (let i = (next - 1) * projectPerPage; i < min(filterProjects.length, next * projectPerPage); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
     }
   }
 
-  const lastClick = () => {
-    if (page < lastPage) {
-        setPage(lastPage);
-        const last = lastPage;
+  const lastProjectClick = () => {
+    if (projectPage < lastProjectPage) {
+        setProjectPage(lastProjectPage);
+        const last = lastProjectPage;
         let project = [];
-        for (let i = (last - 1) * 6; i < min(filterProjects.length, last * 6); i++) {
+        for (let i = (last - 1) * projectPerPage; i < min(filterProjects.length, last * projectPerPage); i++) {
             project[project.length] = filterProjects[i];
         }
         setProjects(project);
@@ -260,14 +329,27 @@ export default function Home() {
                               </div>
                           </div>
                           <div className={custom.cardbody}>
+                              <div className={`text-center ${custom.seemore}`}>
+                                  <span className="mx-2" onClick={() => prevWorkExperienceClick()}>{' < '}</span>
+                                  {workExperiencePage > 1 && <span className="mx-2" onClick={() => firstWorkExperienceClick()}>{' 1 '}</span>}
+                                  {workExperiencePage - 2 > 1 && <span className="mx-2">{' .. '}</span>}
+                                  {workExperiencePage - 1 > 1 && <span className="mx-2" onClick={() => prevWorkExperienceClick()}>{` ${workExperiencePage - 1} `}</span>}
+
+                                  <span className="mx-2"><strong>{` ${workExperiencePage} `}</strong></span>
+
+                                  {workExperiencePage + 1 < lastWorkExperiencePage && <span className="mx-2" onClick={() => nextWorkExperienceClick()}>{` ${workExperiencePage + 1} `}</span>}
+                                  {workExperiencePage + 2 < lastWorkExperiencePage && <span className="mx-2">{' .. '}</span>}
+                                  {workExperiencePage < lastWorkExperiencePage && <span className="mx-2" onClick={() => lastWorkExperienceClick()}>{` ${lastWorkExperiencePage} `}</span>}
+                                  <span className="mx-2" onClick={() => nextWorkExperienceClick()}>{' > '}</span>
+                              </div>
                               {workExperiences.map(workExperience => {
                                 return (
                                   <div key={workExperience._id}>
                                     <h6 className={`${custom.title} text-danger`}>{workExperience.from} - {workExperience.to}</h6>
                                     <p><b>{workExperience.job_position} at {workExperience.company}</b></p>
-                                    <p className="subtitle">
+                                    <div id={`work-experience_${workExperience._id}`}>
                                       {workExperience.description}
-                                    </p>
+                                    </div>
                                     {workExperience._id !== workExperiences[workExperiences.length - 1]._id && <hr></hr>}
                                   </div>
                                 )
@@ -300,11 +382,11 @@ export default function Home() {
                             <ul>
                               <li><h6>Algorithm Strategy</h6></li>
                               <li><h6>Object Oriented Programming</h6></li>
-                              <li><h6>Test Case & Scenario</h6></li>
+                              <li><h6>Manual & Automation Testing</h6></li>
                               <li><h6>Web & Database Security</h6></li>
                               <li><h6>Query Optimization</h6></li>
                               <li><h6>SOAP, REST, & GraphQL Web Services</h6></li>
-                              <li><h6>Cloud Computing (Azure, GCP)</h6></li>
+                              <li><h6>Cloud Computing</h6></li>
                               <li><h6>Artificial Intelligence</h6></li>
                               <li><h6>Machine Learning</h6></li>
                             </ul>
@@ -332,7 +414,7 @@ export default function Home() {
                             <ul>
                               <li><h6>NodeJS (ExpressJS, NestJS, HapiJS)</h6></li>
                               <li><h6>Python (Flask, Django)</h6></li>
-                              <li><h6>Go</h6></li>
+                              <li><h6>Go (Gin)</h6></li>
                               <li><h6>PHP (Laravel, CodeIgniter)</h6></li>
                               <li><h6>C# (.NET, Unity)</h6></li>
                               <li><h6>Java (Spring Boot, JAX-WS, JavaFX, Swing)</h6></li>
@@ -347,12 +429,23 @@ export default function Home() {
                               <li><h6>Redis</h6></li>
                             </ul>
                             <hr></hr>
+                            <h6><b>Cloud</b></h6>
+                            <ul>
+                              <li><h6>Azure</h6></li>
+                              <li><h6>GCP</h6></li>
+                              <li><h6>AWS</h6></li>
+                            </ul>
+                            <hr></hr>
                             <h6><b>Others</b></h6>
                             <ul>
-                              <li><h6>Design (Bootstrap, Ant Design)</h6></li>
+                              <li><h6>ActiveMQ</h6></li>
+                              <li><h6>Penetration Testing</h6></li>
+                              <li><h6>Automation Testing (Selenium)</h6></li>
                               <li><h6>DevOps (Docker, CI/CD)</h6></li>
+                              <li><h6>Design (Bootstrap, Ant Design)</h6></li>
                               <li><h6>Typescript</h6></li>
                               <li><h6>WebGL</h6></li>
+                              <li><h6>Google Tool (Docs, Spreadsheet, Data Studio, Slides)</h6></li>
                             </ul>
                           </div>
                       </div>
@@ -381,7 +474,7 @@ export default function Home() {
                                       <Image alt="ProjectImage" src={project.image_path} width="100%" height="100%" layout="responsive" objectFit="contain" />
                                   </a>
                                   <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>{project.title}</h5>
-                                  <div id={`project-${project._id}`}>
+                                  <div id={`project_${project._id}`}>
                                       {project.description}
                                   </div>
                               </div>
@@ -391,17 +484,17 @@ export default function Home() {
                   })}
               </div>
               <div className={`text-center ${custom.seemore}`}>
-                  <span className="mx-2" onClick={() => prevClick()}>{' < '}</span>
-                  {page > 1 && <span className="mx-2" onClick={() => firstClick()}>{' 1 '}</span>}
-                  {page - 2 > 1 && <span className="mx-2">{' .. '}</span>}
-                  {page - 1 > 1 && <span className="mx-2" onClick={() => prevClick()}>{` ${page - 1} `}</span>}
+                  <span className="mx-2" onClick={() => prevProjectClick()}>{' < '}</span>
+                  {projectPage > 1 && <span className="mx-2" onClick={() => firstProjectClick()}>{' 1 '}</span>}
+                  {projectPage - 2 > 1 && <span className="mx-2">{' .. '}</span>}
+                  {projectPage - 1 > 1 && <span className="mx-2" onClick={() => prevProjectClick()}>{` ${projectPage - 1} `}</span>}
 
-                  <span className="mx-2"><strong>{` ${page} `}</strong></span>
+                  <span className="mx-2"><strong>{` ${projectPage} `}</strong></span>
 
-                  {page + 1 < lastPage && <span className="mx-2" onClick={() => nextClick()}>{` ${page + 1} `}</span>}
-                  {page + 2 < lastPage && <span className="mx-2">{' .. '}</span>}
-                  {page < lastPage && <span className="mx-2" onClick={() => lastClick()}>{` ${lastPage} `}</span>}
-                  <span className="mx-2" onClick={() => nextClick()}>{' > '}</span>
+                  {projectPage + 1 < lastProjectPage && <span className="mx-2" onClick={() => nextProjectClick()}>{` ${projectPage + 1} `}</span>}
+                  {projectPage + 2 < lastProjectPage && <span className="mx-2">{' .. '}</span>}
+                  {projectPage < lastProjectPage && <span className="mx-2" onClick={() => lastProjectClick()}>{` ${lastProjectPage} `}</span>}
+                  <span className="mx-2" onClick={() => nextProjectClick()}>{' > '}</span>
               </div>
           </div>
         </section>

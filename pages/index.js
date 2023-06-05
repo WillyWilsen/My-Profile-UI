@@ -374,7 +374,7 @@ export default function Home() {
                       <div className={custom.card}>
                         <div className={custom.cardheader}>
                               <div className="mt-2">
-                                  <h4>Other Skills</h4>
+                                  <h4>Skills</h4>
                                   <span className={custom.line}></span>  
                               </div>
                           </div>
@@ -389,6 +389,40 @@ export default function Home() {
                               <li><h6>Cloud Computing</h6></li>
                               <li><h6>Artificial Intelligence</h6></li>
                               <li><h6>Machine Learning</h6></li>
+                            </ul>
+                          </div>
+                      </div>
+                      <div className={custom.card}>
+                        <div className={custom.cardheader}>
+                              <div className="mt-2">
+                                  <h4>Certificates</h4>
+                                  <span className={custom.line}></span>  
+                              </div>
+                          </div>
+                          <div className={custom.cardbody}>
+                            <h6><b>Coursera</b></h6>
+                            <ul>
+                              <li><h6>Google Cloud Fundamentals: Core Infrastructure (May 2023)</h6></li>
+                              <li><h6>Managing Security in Google Cloud (May 2023)</h6></li>
+                              <li><h6>Networking in Google Cloud: Defining and Implementing Networks (May 2023)</h6></li>
+                              <li><h6>Networking in Google Cloud: Hybrid Connectivity and Network (May 2023)</h6></li>
+                              <li><h6>Preparing for Your Professional Cloud Security Engineer Journey (May 2023)</h6></li>
+                              <li><h6>Security Best Practices in Google Cloud (May 2023)</h6></li>
+                              <li><h6>Cloud Computing</h6></li>
+                              <li><h6>Hands-On Labs in Google Cloud for Networking Engineers (Apr 2023)</h6></li>
+                              <li><h6>Hands-On Labs in Google Cloud for Security Engineers (Apr 2023)</h6></li>
+                              <li><h6>Mitigating Security Vulnerabilities on Google Cloud (Apr 2023)</h6></li>
+                            </ul>
+                            <hr></hr>
+                            <h6><b>LinkedIn</b></h6>
+                            <ul>
+                              <li><h6>Cloud Computing Careers and Certifications: First Steps (Apr 2023)</h6></li>
+                              <li><h6>Cybersecurity at Work (Apr 2023)</h6></li>
+                            </ul>
+                            <hr></hr>
+                            <h6><b>RevoU</b></h6>
+                            <ul>
+                              <li><h6>Intro to Data Analytics (May 2023)</h6></li>
                             </ul>
                           </div>
                       </div>

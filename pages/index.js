@@ -444,7 +444,7 @@ export default function Home() {
                             <ul>
                               <li><h6>NodeJS (ExpressJS, NestJS, HapiJS)</h6></li>
                               <li><h6>Python (Flask, Django)</h6></li>
-                              <li><h6>Go (Gin)</h6></li>
+                              <li><h6>Go (Gin, Echo)</h6></li>
                               <li><h6>PHP (Laravel, CodeIgniter)</h6></li>
                               <li><h6>C# (.NET, Unity)</h6></li>
                               <li><h6>Java (Spring Boot, JAX-WS, JavaFX, Swing)</h6></li>

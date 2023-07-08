@@ -245,8 +245,8 @@ export default function Home() {
               <div className={custom.headercontent}>
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
-                  <h6 className={custom.headermono} >Software Engineer | Data Engineer | Project Manager</h6>
-                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1Q1xIAOenXZ31LFPyucQ8zk6kqqF4P-ep&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
+                  <h6 className={custom.headermono} >Software Engineer | Data Engineer | Technical Lead</h6>
+                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1ZfkfPrbvC10VtAvbjXp7RHnFkfspiEiq&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
         </header>
@@ -257,16 +257,12 @@ export default function Home() {
                     <h3 className={`${custom.fontweightlight}`}>Who am I ?</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <p className="mt-20">
-                        I am a person who is familiar in <b>software development</b>. 
-                        I am experienced in designing, developing and maintaining software. 
-                        I able to learn and adjust to new environments and technologies. 
-                        I also often do <b>data analysis</b> for <b>data warehousing</b> using SQL and Excel to define current business problem.
-                        Then, I implement the workaround steps that can be taken to solve the problem.
-                        Not only that, I also have experiences being a <b>team leader</b> in completing projects.
-                        I analyze software architectures such as designing databases, use cases, kanban boards, and monitoring work using agile methods.
-                        So, I have the ability to communicate and coordinate with others to achieve our goals.
+                        I am a person familiar in <b>software development</b> and experienced in designing, developing and maintaining software.
+                        I frequently do <b>data engineering</b> for data warehousing using SQL and Excel to define current business problems and solve them.
+                        Not only that, I also have experience as a <b>technical lead</b> in analyzing software architectures, creating technical documentation and monitoring work using agile methods to complete projects.
+                        However, I am a curious person in seeking knowledge, actively ask questions, and have the ability to coordinate with others to achieve our goals.
                     </p>
-                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1Q1xIAOenXZ31LFPyucQ8zk6kqqF4P-ep&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
+                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1ZfkfPrbvC10VtAvbjXp7RHnFkfspiEiq&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>

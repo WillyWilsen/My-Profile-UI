@@ -246,7 +246,7 @@ export default function Home() {
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
                   <h6 className={custom.headermono} >Software Engineer | Data Engineer | Technical Lead</h6>
-                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1ZfkfPrbvC10VtAvbjXp7RHnFkfspiEiq&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
+                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1bntMyzjaFsSWv4uniUtlwkJypNv2-hE1&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
         </header>
@@ -262,7 +262,7 @@ export default function Home() {
                         Not only that, I also have experience as a <b>technical lead</b> in analyzing software architectures, creating technical documentation and monitoring work using agile methods to complete projects.
                         However, I am a curious person in seeking knowledge, actively ask questions, and have the ability to coordinate with others to achieve our goals.
                     </p>
-                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1ZfkfPrbvC10VtAvbjXp7RHnFkfspiEiq&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
+                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1bntMyzjaFsSWv4uniUtlwkJypNv2-hE1&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>

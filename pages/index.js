@@ -7,11 +7,13 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Select from 'react-select'
+import { WorkExperience } from '../attributes/WorkExperience'
+import { Project } from '../attributes/Project'
 
 export default function Home() {
-  const [allWorkExperiences, setAllWorkExperiences] = useState([]);
+  const [allWorkExperiences, setAllWorkExperiences] = useState(WorkExperience);
   const [workExperiences, setWorkExperiences] = useState([]);
-  const [allProjects, setAllProjects] = useState([]);
+  const [allProjects, setAllProjects] = useState(Project);
   const [filterProjects, setFilterProjects] = useState([]);
   const [projects, setProjects] = useState([]);
   const [workExperiencePage, setWorkExperiencePage] = useState(1);
@@ -36,13 +38,13 @@ export default function Home() {
 
   const updateWorkExperienceHTML = async () => {
     for (let i = 0; i < workExperiences.length; i++) {
-      document.getElementById(`work-experience_${workExperiences[i]._id}`).innerHTML = workExperiences[i].description;
+      document.getElementById(`work-experience_${i}`).innerHTML = workExperiences[i].description;
     }
   }
 
   const updateProjectHTML = async () => {
     for (let i = 0; i < projects.length; i++) {
-      document.getElementById(`project_${projects[i]._id}`).innerHTML = projects[i].description;
+      document.getElementById(`project_${i}`).innerHTML = projects[i].description;
     }
   }
 
@@ -55,6 +57,13 @@ export default function Home() {
       let workExperience = [];
       for (let i = 0; i < min(workExperiencePerPage, response.data.length); i++) {
         workExperience.push(response.data[i]);
+      }
+      setWorkExperiences(workExperience);
+    }).catch(e => {
+      setLastWorkExperiencePage(parseInt((allWorkExperiences.length - 1) / workExperiencePerPage) + 1)
+      let workExperience = [];
+      for (let i = 0; i < min(workExperiencePerPage, allWorkExperiences.length); i++) {
+        workExperience.push(allWorkExperiences[i]);
       }
       setWorkExperiences(workExperience);
     });
@@ -118,6 +127,14 @@ export default function Home() {
       let project = [];
       for (let i = 0; i < min(projectPerPage, response.data.length); i++) {
         project.push(response.data[i]);
+      }
+      setProjects(project);
+    }).catch(e => {
+      setFilterProjects(allProjects);
+      setLastProjectPage(parseInt((allProjects.length - 1) / projectPerPage) + 1)
+      let project = [];
+      for (let i = 0; i < min(projectPerPage, allProjects.length); i++) {
+        project.push(allProjects[i]);
       }
       setProjects(project);
     });
@@ -245,8 +262,8 @@ export default function Home() {
               <div className={custom.headercontent}>
                   <h4 className={custom.headersubtitle}>Hello, I am</h4>
                   <h1 className={custom.headertitle}>Willy Wilsen</h1>
-                  <h6 className={custom.headermono} >Software Engineer | Data Engineer | Technical Lead</h6>
-                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1bntMyzjaFsSWv4uniUtlwkJypNv2-hE1&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
+                  <h6 className={custom.headermono} >Software Engineer | Data Engineer | Technical Lead | Cyber Security Engineer</h6>
+                  <a rel="noreferrer" href="https://drive.google.com/uc?id=1YVhZNf1qQqctE_Hdp-ck8BTKR9G0VZK5&export=download" target="_blank"><button className={`${custom.btn} ${custom.btnprimary} btn-rounded`}><i className="pr-2"></i>Download CV</button></a>
               </div>
             </div>
         </header>
@@ -254,15 +271,16 @@ export default function Home() {
         <div className="container-fluid">
             <div id="about" className={`row ${custom.aboutsection}`}>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
-                    <h3 className={`${custom.fontweightlight}`}>Who am I ?</h3>
+                    <h3 className={`${custom.fontweightlight}`}>Professional Summary</h3>
                     <span className={`${custom.line} mb-5`}></span>
                     <p className="mt-20">
-                        I am a person familiar in <b>software development</b> and experienced in designing, developing and maintaining software.
-                        I frequently do <b>data engineering</b> for data warehousing using SQL and Excel to define current business problems and solve them.
-                        Not only that, I also have experience as a <b>technical lead</b> in analyzing software architectures, creating technical documentation and monitoring work using agile methods to complete projects.
-                        However, I am a curious person in seeking knowledge, actively ask questions, and have the ability to coordinate with others to achieve our goals.
+                        Highly skilled and versatile professional with expertise in Software Engineering, Data Engineering, Technical Leadership, and Cyber Security. 
+                        Adept at designing and developing innovative solutions to complex technical challenges. 
+                        Proven ability to lead and collaborate with cross-functional teams, ensuring successful project delivery. 
+                        Combining technical proficiency with a passion for security, I strive to safeguard data and systems while optimizing performance and efficiency. 
+                        Curious, adaptable, and continuously seeking opportunities to provide secure and efficient solutions that elevate organizational performance.
                     </p>
-                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1bntMyzjaFsSWv4uniUtlwkJypNv2-hE1&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
+                    <a rel="noreferrer" href="https://drive.google.com/uc?id=1YVhZNf1qQqctE_Hdp-ck8BTKR9G0VZK5&export=download" target="_blank"><button className="btn btn-outline-danger"><i className="icon-down-circled2 "></i>Download My CV</button></a>
                 </div>
                 <div className={`col-lg-4 ${custom.aboutcard}`}>
                     <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>
@@ -303,8 +321,8 @@ export default function Home() {
                     <div className={custom.row}>
                         <div className="col-1 text-danger pt-1"><Image alt="ProjectManager" src="/icon/ProjectManager.png" width={30} height={30} /></div>
                         <div className={`col-10 ${custom.mlauto} me-3`}>
-                            <h6>Project Manager</h6>
-                            <p>Experienced in project management (Intermediate).</p>
+                            <h6>Technical Lead</h6>
+                            <p>Experienced in project & human resource management (Intermediate).</p>
                             <hr></hr>
                         </div>
                     </div>
@@ -338,15 +356,15 @@ export default function Home() {
                                   {workExperiencePage < lastWorkExperiencePage && <span className="mx-2" onClick={() => lastWorkExperienceClick()}>{` ${lastWorkExperiencePage} `}</span>}
                                   <span className="mx-2" onClick={() => nextWorkExperienceClick()}>{' > '}</span>
                               </div>
-                              {workExperiences.map(workExperience => {
+                              {workExperiences.map((workExperience, key) => {
                                 return (
-                                  <div key={workExperience._id}>
+                                  <div key={key}>
                                     <h6 className={`${custom.title} text-danger`}>{workExperience.from} - {workExperience.to}</h6>
                                     <p><b>{workExperience.job_position} at {workExperience.company}</b></p>
-                                    <div id={`work-experience_${workExperience._id}`}>
+                                    <div id={`work-experience_${key}`}>
                                       {workExperience.description}
                                     </div>
-                                    {workExperience._id !== workExperiences[workExperiences.length - 1]._id && <hr></hr>}
+                                    {key !== workExperiences.length - 1 && <hr></hr>}
                                   </div>
                                 )
                               })}
@@ -398,16 +416,9 @@ export default function Home() {
                           <div className={custom.cardbody}>
                             <h6><b>Coursera</b></h6>
                             <ul>
-                              <li><h6>Google Cloud Fundamentals: Core Infrastructure (May 2023)</h6></li>
-                              <li><h6>Managing Security in Google Cloud (May 2023)</h6></li>
-                              <li><h6>Networking in Google Cloud: Defining and Implementing Networks (May 2023)</h6></li>
-                              <li><h6>Networking in Google Cloud: Hybrid Connectivity and Network (May 2023)</h6></li>
-                              <li><h6>Preparing for Your Professional Cloud Security Engineer Journey (May 2023)</h6></li>
-                              <li><h6>Security Best Practices in Google Cloud (May 2023)</h6></li>
-                              <li><h6>Cloud Computing</h6></li>
-                              <li><h6>Hands-On Labs in Google Cloud for Networking Engineers (Apr 2023)</h6></li>
-                              <li><h6>Hands-On Labs in Google Cloud for Security Engineers (Apr 2023)</h6></li>
-                              <li><h6>Mitigating Security Vulnerabilities on Google Cloud (Apr 2023)</h6></li>
+                              <li><h6>Google Cybersecurity (Aug 2023)</h6></li>
+                              <li><h6>Preparing for Google Cloud Certification: Cloud Security Engineer (May 2023)</h6></li>
+                              <li><h6>Preparing for Google Cloud Certification: Cloud Network Engineer (May 2023)</h6></li>
                             </ul>
                             <hr></hr>
                             <h6><b>LinkedIn</b></h6>
@@ -455,24 +466,49 @@ export default function Home() {
                             <ul>
                               <li><h6>MySQL</h6></li>
                               <li><h6>PostgreSQL</h6></li>
+                              <li><h6>SQL Server</h6></li>
                               <li><h6>MongoDB</h6></li>
                               <li><h6>Redis</h6></li>
                             </ul>
                             <hr></hr>
                             <h6><b>Cloud</b></h6>
                             <ul>
+                              <li><h6>AWS</h6></li>
                               <li><h6>Azure</h6></li>
                               <li><h6>GCP</h6></li>
-                              <li><h6>AWS</h6></li>
+                            </ul>
+                            <hr></hr>
+                            <h6><b>DevOps</b></h6>
+                            <ul>
+                              <li><h6>Docker</h6></li>
+                              <li><h6>CI/CD</h6></li>
+                            </ul>
+                            <hr></hr>
+                            <h6><b>Automation Testing</b></h6>
+                            <ul>
+                              <li><h6>Selenium</h6></li>
+                            </ul>
+                            <hr></hr>
+                            <h6><b>Penetration Testing</b></h6>
+                            <ul>
+                              <li><h6>Burp Suite</h6></li>
+                              <li><h6>OWASP ZAP</h6></li>
+                            </ul>
+                            <hr></hr>
+                            <h6><b>UI Framework</b></h6>
+                            <ul>
+                              <li><h6>Bootstrap</h6></li>
+                              <li><h6>Ant Design</h6></li>
+                            </ul>
+                            <hr></hr>
+                            <h6><b>Message Queuing</b></h6>
+                            <ul>
+                              <li><h6>ActiveMQ</h6></li>
                             </ul>
                             <hr></hr>
                             <h6><b>Others</b></h6>
                             <ul>
-                              <li><h6>ActiveMQ</h6></li>
-                              <li><h6>Penetration Testing</h6></li>
-                              <li><h6>Automation Testing (Selenium)</h6></li>
-                              <li><h6>DevOps (Docker, CI/CD)</h6></li>
-                              <li><h6>Design (Bootstrap, Ant Design)</h6></li>
+                              <li><h6>Linux</h6></li>
                               <li><h6>Typescript</h6></li>
                               <li><h6>WebGL</h6></li>
                               <li><h6>Google Tool (Docs, Spreadsheet, Data Studio, Slides)</h6></li>
@@ -492,9 +528,9 @@ export default function Home() {
                   <button className='btn btn-danger ms-3' onClick={e => clear(e)}>Clear</button>
               </div>
               <div className="row">
-                  {projects.map(project => {
+                  {projects.map((project, key) => {
                     return (
-                      <div key={project._id} className="col-md-4 col-sm-6">
+                      <div key={key} className="col-md-4 col-sm-6">
                           <div className={`${custom.card} mb-5`}>
                               <div className={`${custom.cardheader} ${custom.hasicon}`}>
                                   <Image alt="Project" src="/icon/Project.png" width={30} height={30} />
@@ -504,7 +540,7 @@ export default function Home() {
                                       <Image alt="ProjectImage" src={project.image_path} width="100%" height="100%" layout="responsive" objectFit="contain" />
                                   </a>
                                   <h5 className={`mb-3 ${custom.cardtitle} text-dark mt-1`}>{project.title}</h5>
-                                  <div id={`project_${project._id}`}>
+                                  <div id={`project_${key}`}>
                                       {project.description}
                                   </div>
                               </div>

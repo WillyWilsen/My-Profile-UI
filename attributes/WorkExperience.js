@@ -2,7 +2,7 @@ export const WorkExperience = [
   {
     _id: { $oid: "647b19f827b072d12d76ac10" },
     from: "Nov 2022",
-    to: "Jun 2023",
+    to: "Sep 2023",
     job_position: "Software & Data Engineer",
     company: "Jatis Mobile (PT Informasi Teknologi Indonesia)",
     description:

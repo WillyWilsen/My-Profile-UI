@@ -2,13 +2,23 @@ export const WorkExperience = [
   {
     _id: { $oid: "647b19f827b072d12d76ac10" },
     from: "Nov 2022",
-    to: "Sep 2023",
+    to: "Dec 2023",
     job_position: "Software & Data Engineer",
     company: "Jatis Mobile (PT Informasi Teknologi Indonesia)",
     description:
       "Jatis Mobile is a digital communication & distribution company gaining market experience and insights since 2002. Jatis Mobile's client portfolio builds up to more than 500 corporate clients. <b>My responsibilities:</b><br>1. Developing front-end website architecture<br>2. Designing user interactions on web pages<br>3. Developing back-end website applications<br>4. Creating servers and databases for functionality<br>5. Ensuring cross-platform optimization for mobile phones<br>6. Ensuring responsiveness of applications<br>7. Working alongside graphic designers for web design features<br>8. Seeing through a project from conception to finished product<br>9. Designing and developing APIs<br>10. Meeting both technical and consumer needs<br>11. Staying abreast of developments in web applications and programming languages<br><b>Skills:</b> Unit Testing · ASP.NET · Spring Boot · Gin · ActiveMQ · CodeIgniter · WinSCP · Microsoft SQL Server · Data Warehousing · MySQL · Laravel",
-    sequence: { $numberInt: "9" },
+    sequence: { $numberInt: "10" },
     __v: { $numberInt: "0" },
+  },
+  {
+    _id: { $oid: "659c1319cf511894f37d194c" },
+    from: "Aug 2023",
+    to: "Dec 2023",
+    job_position: "Software Quality Assurance Engineer",
+    company: "Waste4Change (PT Wasteforchange Alam Indonesia)",
+    description:
+      "Waste4Change is a company that has innovation to create a waste-free Indonesia. <b>My responsibilities:</b><br>1. Manually identify and report bugs early<br>2. Fully understand all of product requirements and technical implementations of apps, services, and tools<br>3. Report bugs clearly with all the relevant information to make it easier to fix<br>4. Maintain test cases such that they have good test coverage, informative, and easy to execute<br>5. Analyze and systematically approach bugs reported, always coming up with practical short term and long term process improvements to avoid them<br>6. Creating test case, execute it then do the regression<br>7. Identify things that can go wrong early but also quick to investigate bugs reported in productionManually identify and report bugs early\n<br><b>Skills:</b> Software Testing · Quality Control",
+    sequence: { $numberInt: "9" },
   },
   {
     _id: { $oid: "65164c411e0f235bb960690c" },

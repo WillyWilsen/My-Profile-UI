@@ -387,11 +387,11 @@ export default function Home() {
               <h1 className={custom.headertitle}>Willy Wilsen</h1>
               <h6 className={custom.headermono}>
                 Software Engineer | Data Engineer | Technical Lead | Cyber
-                Security Engineer
+                Security Engineer | Software Quality Assurance Engineer
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1YVhZNf1qQqctE_Hdp-ck8BTKR9G0VZK5&export=download"
+                href="https://drive.google.com/uc?id=1k7OJ3ek3N_lAyl8lGNEVg_d_dfGn-xQN&export=download"
                 target="_blank"
               >
                 <button
@@ -417,16 +417,13 @@ export default function Home() {
                 and Cyber Security. Adept at designing and developing innovative
                 solutions to complex technical challenges. Proven ability to
                 lead and collaborate with cross-functional teams, ensuring
-                successful project delivery. Combining technical proficiency
-                with a passion for security, I strive to safeguard data and
-                systems while optimizing performance and efficiency. Curious,
-                adaptable, and continuously seeking opportunities to provide
-                secure and efficient solutions that elevate organizational
-                performance.
+                successful project delivery. Curious, adaptable, and continuously 
+                seeking opportunities to providesecure and efficient solutions 
+                that elevate organizationalperformance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1YVhZNf1qQqctE_Hdp-ck8BTKR9G0VZK5&export=download"
+                href="https://drive.google.com/uc?id=1k7OJ3ek3N_lAyl8lGNEVg_d_dfGn-xQN&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -734,6 +731,9 @@ export default function Home() {
                     </h6>
                     <ul>
                       <li>
+                        <h6>Google IT Support (Dec 2023)</h6>
+                      </li>
+                      <li>
                         <h6>Google Cybersecurity (Aug 2023)</h6>
                       </li>
                       <li>
@@ -747,6 +747,24 @@ export default function Home() {
                           Preparing for Google Cloud Certification: Cloud
                           Network Engineer (May 2023)
                         </h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Dicoding</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Becoming a Google Cloud Architect (Dec 2023)</h6>
+                      </li>
+                      <li>
+                        <h6>Basic Machine Learning (Dec 2023)</h6>
+                      </li>
+                      <li>
+                        <h6>Becoming a Google Cloud Engineer (Oct 2023)</h6>
+                      </li>
+                      <li>
+                        <h6>(Google Cloud) Back-End Basic (Aug 2023)</h6>
                       </li>
                     </ul>
                     <hr></hr>

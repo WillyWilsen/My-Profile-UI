@@ -418,7 +418,7 @@ export default function Home() {
                 solutions to complex technical challenges. Proven ability to
                 lead and collaborate with cross-functional teams, ensuring
                 successful project delivery. Curious, adaptable, and continuously 
-                seeking opportunities to providesecure and efficient solutions 
+                seeking opportunities to provide secure and efficient solutions 
                 that elevate organizational performance.
               </p>
               <a

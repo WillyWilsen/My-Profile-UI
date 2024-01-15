@@ -419,7 +419,7 @@ export default function Home() {
                 lead and collaborate with cross-functional teams, ensuring
                 successful project delivery. Curious, adaptable, and continuously 
                 seeking opportunities to providesecure and efficient solutions 
-                that elevate organizationalperformance.
+                that elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"

@@ -2,13 +2,23 @@ export const WorkExperience = [
   {
     _id: { $oid: "647b19f827b072d12d76ac10" },
     from: "Nov 2022",
-    to: "Dec 2023",
+    to: "Jan 2024",
     job_position: "Software & Data Engineer",
     company: "Jatis Mobile (PT Informasi Teknologi Indonesia)",
     description:
       "Jatis Mobile is a digital communication & distribution company gaining market experience and insights since 2002. Jatis Mobile's client portfolio builds up to more than 500 corporate clients. <b>My responsibilities:</b><br>1. Developing front-end website architecture<br>2. Designing user interactions on web pages<br>3. Developing back-end website applications<br>4. Creating servers and databases for functionality<br>5. Ensuring cross-platform optimization for mobile phones<br>6. Ensuring responsiveness of applications<br>7. Working alongside graphic designers for web design features<br>8. Seeing through a project from conception to finished product<br>9. Designing and developing APIs<br>10. Meeting both technical and consumer needs<br>11. Staying abreast of developments in web applications and programming languages<br><b>Skills:</b> Unit Testing · ASP.NET · Spring Boot · Gin · ActiveMQ · CodeIgniter · WinSCP · Microsoft SQL Server · Data Warehousing · MySQL · Laravel",
-    sequence: { $numberInt: "10" },
+    sequence: { $numberInt: "11" },
     __v: { $numberInt: "0" },
+  },
+  {
+    _id: { $oid: "65ab40bc77aed6639c5ffa56" },
+    from: "Aug 2023",
+    to: "Jan 2024",
+    job_position: "Cloud Computing Cohort",
+    company: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
+    description:
+      "Bangkit is designed to prepare students with in-demand skills and tech certifications. I learn the fundamentals of cloud computing to deploy applications, monitor operations, and manage enterprise solutions with these specializations:<br>1. Google IT Support<br>2. Cloud Computing Foundation<br>3. Cloud Engineering Learning Path<br>4. Web Basic<br>5. Javascript Basic<br>6. Back-End Basic<br>7. Cloud Engineer<br>8. Application Development with Cloud Run<br><b>Skills:</b> Android Studio · Cloud Computing · Back-End Web Development · Google Cloud Platform (GCP) · Go (Programming Language)",
+    sequence: "10",
   },
   {
     _id: { $oid: "659c1319cf511894f37d194c" },

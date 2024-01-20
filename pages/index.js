@@ -391,7 +391,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1k7OJ3ek3N_lAyl8lGNEVg_d_dfGn-xQN&export=download"
+                href="https://drive.google.com/uc?id=1VBdCAKrL-YaqKJoc5GgQN3CklQh3A2UZ&export=download"
                 target="_blank"
               >
                 <button
@@ -417,13 +417,13 @@ export default function Home() {
                 and Cyber Security. Adept at designing and developing innovative
                 solutions to complex technical challenges. Proven ability to
                 lead and collaborate with cross-functional teams, ensuring
-                successful project delivery. Curious, adaptable, and continuously 
-                seeking opportunities to provide secure and efficient solutions 
-                that elevate organizational performance.
+                successful project delivery. Curious, adaptable, and
+                continuously seeking opportunities to provide secure and
+                efficient solutions that elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1k7OJ3ek3N_lAyl8lGNEVg_d_dfGn-xQN&export=download"
+                href="https://drive.google.com/uc?id=1VBdCAKrL-YaqKJoc5GgQN3CklQh3A2UZ&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -822,6 +822,9 @@ export default function Home() {
                       <li>
                         <h6>React Native</h6>
                       </li>
+                      <li>
+                        <h6>Android Studio</h6>
+                      </li>
                     </ul>
                     <hr></hr>
                     <h6>
@@ -845,9 +848,6 @@ export default function Home() {
                       </li>
                       <li>
                         <h6>Java (Spring Boot, JAX-WS, JavaFX, Swing)</h6>
-                      </li>
-                      <li>
-                        <h6>Kotlin (Android Studio)</h6>
                       </li>
                     </ul>
                     <hr></hr>
@@ -921,14 +921,20 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>UI Framework</b>
+                      <b>UI Library</b>
                     </h6>
                     <ul>
                       <li>
-                        <h6>Bootstrap</h6>
-                      </li>
-                      <li>
                         <h6>Ant Design</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Workflow Automation</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Apache Airflow</h6>
                       </li>
                     </ul>
                     <hr></hr>

@@ -391,7 +391,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1VBdCAKrL-YaqKJoc5GgQN3CklQh3A2UZ&export=download"
+                href="https://drive.google.com/uc?id=1LuN8kfLoyDOaLazXLxWEeNVEMzYglfyY&export=download"
                 target="_blank"
               >
                 <button
@@ -423,7 +423,7 @@ export default function Home() {
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1VBdCAKrL-YaqKJoc5GgQN3CklQh3A2UZ&export=download"
+                href="https://drive.google.com/uc?id=1LuN8kfLoyDOaLazXLxWEeNVEMzYglfyY&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -848,6 +848,9 @@ export default function Home() {
                       </li>
                       <li>
                         <h6>Java (Spring Boot, JAX-WS, JavaFX, Swing)</h6>
+                      </li>
+                      <li>
+                        <h6>Rust</h6>
                       </li>
                     </ul>
                     <hr></hr>

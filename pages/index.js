@@ -412,14 +412,12 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                Highly skilled and versatile professional with expertise in
-                Software Engineering, Data Engineering, Technical Leadership,
-                and Cyber Security. Adept at designing and developing innovative
-                solutions to complex technical challenges. Proven ability to
-                lead and collaborate with cross-functional teams, ensuring
-                successful project delivery. Curious, adaptable, and
-                continuously seeking opportunities to provide secure and
-                efficient solutions that elevate organizational performance.
+                Highly skilled and versatile professional with expertise in Software Engineering, Data Engineering, 
+                Technical Leadership, Cyber Security, and Software Quality Assurance. Adept at designing and 
+                developing innovative solutions to complex technical challenges. Proven ability to lead and 
+                collaborate with cross-functional teams, ensuring successful project delivery. Curious, adaptable, 
+                and continuously seeking opportunities to provide secure and efficient solutions that elevate 
+                organizational performance.
               </p>
               <a
                 rel="noreferrer"

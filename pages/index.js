@@ -386,12 +386,17 @@ export default function Home() {
               <h4 className={custom.headersubtitle}>Hello, I am</h4>
               <h1 className={custom.headertitle}>Willy Wilsen</h1>
               <h6 className={custom.headermono}>
-                Software Engineer | Data Engineer | Technical Lead | Cyber
-                Security Engineer | Software Quality Assurance Engineer
+                Software Engineer | Data Engineer |
+                <br></br>
+                Technical Lead | System Analyst |
+                <br></br>
+                Cyber Security Engineer | Software QA Engineer |
+                <br></br>
+                Associate Cloud Engineer (ACE)
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1LuN8kfLoyDOaLazXLxWEeNVEMzYglfyY&export=download"
+                href="https://drive.google.com/uc?id=1NE4CEEwh8TxspB_IIO_xIcOP7LjeBSTU&export=download"
                 target="_blank"
               >
                 <button
@@ -412,16 +417,14 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                Highly skilled and versatile professional with expertise in Software Engineering, Data Engineering, 
-                Technical Leadership, Cyber Security, and Software Quality Assurance. Adept at designing and 
-                developing innovative solutions to complex technical challenges. Proven ability to lead and 
-                collaborate with cross-functional teams, ensuring successful project delivery. Curious, adaptable, 
-                and continuously seeking opportunities to provide secure and efficient solutions that elevate 
-                organizational performance.
+                Highly skilled and versatile professional with expertise in Software Engineering, Data Engineering, Technical Leadership, Cyber Security, System Analysis, Software QA, and Cloud Engineering. 
+                Adept at designing and developing innovative solutions to complex technical challenges. 
+                Proven ability to lead and collaborate with cross-functional teams, ensuring successful project delivery. 
+                Curious, adaptable, and continuously seeking opportunities to provide secure and efficient solutions that elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1LuN8kfLoyDOaLazXLxWEeNVEMzYglfyY&export=download"
+                href="https://drive.google.com/uc?id=1NE4CEEwh8TxspB_IIO_xIcOP7LjeBSTU&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -725,7 +728,16 @@ export default function Home() {
                   </div>
                   <div className={custom.cardbody}>
                     <h6>
-                      <b>Coursera</b>
+                      <b>Google Cloud</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Associate Cloud Engineer (Feb 2024 - Feb 2027)</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Google</b>
                     </h6>
                     <ul>
                       <li>
@@ -734,6 +746,21 @@ export default function Home() {
                       <li>
                         <h6>Google Cybersecurity (Aug 2023)</h6>
                       </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>IBM</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>NoSQL, Big Data, and Spark Foundations (Jan 2024)</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Coursera</b>
+                    </h6>
+                    <ul>
                       <li>
                         <h6>
                           Preparing for Google Cloud Certification: Cloud

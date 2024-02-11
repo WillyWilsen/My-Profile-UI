@@ -1,9 +1,18 @@
 export const Project = [
   {
+    _id: { $oid: "65c8812ccf2413607c6d30ac" },
+    title: "BansosPlus App",
+    description:
+      "BansosPlus application is created using <b>Android Studio</b>, <b>Echo with Docker</b> and <b>CI/CD</b>, and <b>MySQL</b> and was deployed in <b>Compute Engine</b> for backend and <b>Cloud Run</b> for machine learning model. This application is a groundbreaking project aimed at revolutionizing the distribution of government welfare benefits. The core problem we address is the inefficiency, lack of transparency in traditional welfare benefit distribution processes, and the most important part is lack of effective targeting. This innovative solution caters to two key user groups: administrators and welfare applicants.<br><b>1)</b> For administrators, BansosPlus provides the means to upload benefit information, manage recipients, and distribute benefits using secure QR codes. This modern approach significantly improves the efficiency of benefit management.<br><b>2)</b> Welfare applicants can use BansosPlus to apply for benefits, provide necessary data, and undergo a credit scoring process to assess their eligibility. This credit scoring model, developed in-house, ensures fairness and accuracy in determining who qualifies for assistance.\n",
+    image_path: "/projects/BansosPlus.png",
+    link: "https://github.com/BansosPlus",
+    sequence: { $numberInt: "23" },
+  },
+  {
     _id: { $oid: "6516665f1e0f235bb960690d" },
     title: "BEAST App",
     description:
-      "BEAST application is an application to make it easier for members, admins and coaches from the Bandung Tennis Enthusiast organization to carry out the tennis training management process. This application was created using <b>React Native</b>, <b>ExpressJS</b>, and <b>Postgre SQL</b>. The features of the BEAST application are to register for training by members, process payment for training by members, confirm the training schedule by the coach, and confirm the training registration process by the admin. Apart from that, in the BEAST software it is also possible for users to view training history, payment history, tournaments, field list, coach list, and media related to the training that has been carried out.",
+      "BEAST application is an application to make it easier for members, admins and coaches from the Bandung Tennis Enthusiast organization to carry out the tennis training management process. This application is created using <b>React Native</b>, <b>ExpressJS</b>, and <b>Postgre SQL</b>. The features of the BEAST application are to register for training by members, process payment for training by members, confirm the training schedule by the coach, and confirm the training registration process by the admin. Apart from that, in the BEAST software it is also possible for users to view training history, payment history, tournaments, field list, coach list, and media related to the training that has been carried out.",
     image_path: "/projects/BEAST.png",
     link: "https://gitlab.informatika.org/if3250_2023_k03_01_pro-13",
     sequence: "22",
@@ -63,7 +72,7 @@ export const Project = [
     _id: { $oid: "6446f1a9935faaf97896fe53" },
     title: "Majika",
     description:
-      "Majika is a mobile application created using <b>Kotlin</b> (<b>Android Studio</b>). Majika application has several features, namely the twibbon feature, restaurant branches, menus, baskets, and payments. Twibbon feature allows users to take selfies that are already installed with the twibbon in the application. Restaurant branch feature allows users to view a list of restaurants in the application and open the location of the restaurant branch on Google Maps. Menu and basket features allow users to view the food or drink menu in the application and then enter the food or drink menu into the basket. Finally, payment feature allows users to pay for food or drinks in the basket.",
+      "Majika is created using <b>Android Studio</b>. Majika application has several features, namely the twibbon feature, restaurant branches, menus, baskets, and payments. Twibbon feature allows users to take selfies that are already installed with the twibbon in the application. Restaurant branch feature allows users to view a list of restaurants in the application and open the location of the restaurant branch on Google Maps. Menu and basket features allow users to view the food or drink menu in the application and then enter the food or drink menu into the basket. Finally, payment feature allows users to pay for food or drinks in the basket.",
     image_path: "/projects/Majika.jpg",
     link: "https://gitlab.informatika.org/if3210-2023-android-mlk/malika",
     sequence: { $numberInt: "16" },

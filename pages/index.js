@@ -397,7 +397,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1UIsx22JFGmPIdGNXYHj8hYPj4GPi57sH&export=download"
+                href="https://drive.google.com/uc?id=1PoX2rw8GFXhOkFaI4IdVUBF2nFXvw2x0&export=download"
                 target="_blank"
               >
                 <button
@@ -422,7 +422,7 @@ export default function Home() {
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1UIsx22JFGmPIdGNXYHj8hYPj4GPi57sH&export=download"
+                href="https://drive.google.com/uc?id=1PoX2rw8GFXhOkFaI4IdVUBF2nFXvw2x0&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">

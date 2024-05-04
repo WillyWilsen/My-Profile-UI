@@ -287,22 +287,23 @@ export default function Home() {
   };
 
   const filterOptions = [
-    { value: "ReactJS", label: "ReactJS" },
-    { value: "VueJS", label: "VueJS" },
-    { value: "NextJS", label: "NextJS" },
+    { value: "React.js", label: "React.js" },
+    { value: "Vue.js", label: "Vue.js" },
+    { value: "Next.js", label: "Next.js" },
     { value: "React Native", label: "React Native" },
-    { value: "ExpressJS", label: "ExpressJS" },
-    { value: "NestJS", label: "NestJS" },
+    { value: "Android Studio", label: "Android Studio" },
+    { value: "Unity", label: "Unity" },
+    { value: "Express.js", label: "Express.js" },
+    { value: "Nest.js", label: "Nest.js" },
     { value: "Flask", label: "Flask" },
     { value: "Go", label: "Go" },
     { value: "Laravel", label: "Laravel" },
     { value: "CodeIgniter", label: "CodeIgniter" },
-    { value: "C#", label: "C#" },
+    { value: ".NET", label: ".NET" },
     { value: "Spring Boot", label: "Spring Boot" },
     { value: "JAX-WS", label: "JAX-WS" },
     { value: "JavaFX", label: "JavaFX" },
     { value: "Swing", label: "Swing" },
-    { value: "Kotlin", label: "Kotlin" },
   ];
 
   return (
@@ -396,7 +397,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1NE4CEEwh8TxspB_IIO_xIcOP7LjeBSTU&export=download"
+                href="https://drive.google.com/uc?id=1UIsx22JFGmPIdGNXYHj8hYPj4GPi57sH&export=download"
                 target="_blank"
               >
                 <button
@@ -417,14 +418,11 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                Highly skilled and versatile professional with expertise in Software Engineering, Data Engineering, Technical Leadership, Cyber Security, System Analysis, Software QA, and Cloud Engineering. 
-                Adept at designing and developing innovative solutions to complex technical challenges. 
-                Proven ability to lead and collaborate with cross-functional teams, ensuring successful project delivery. 
-                Curious, adaptable, and continuously seeking opportunities to provide secure and efficient solutions that elevate organizational performance.
+                Highly skilled and versatile professional with expertise in Software Engineering, Data Engineering, Technical Leadership, Cyber Security, System Analysis, Software QA, and Cloud Engineering. Adept at designing and developing innovative solutions to complex technical challenges. Proven ability to lead and collaborate with cross-functional teams, ensuring successful project delivery. Curious, adaptable, and continuously seeking opportunities to provide secure and efficient solutions that elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1NE4CEEwh8TxspB_IIO_xIcOP7LjeBSTU&export=download"
+                href="https://drive.google.com/uc?id=1UIsx22JFGmPIdGNXYHj8hYPj4GPi57sH&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -671,12 +669,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div className={custom.cardbody}>
-                    <h6 className="title text-danger">2020</h6>
+                    <h6 className="title text-danger">Aug 2020 - 2024</h6>
                     <p>
                       <b>Bandung Institute of Technology</b>
                     </p>
                     <p className="subtitle">
-                      Bachelor of Engineering, Computer Science
+                      Bachelor of Engineering, Computer Science (3.58/4.00)
                     </p>
                   </div>
                 </div>
@@ -693,28 +691,22 @@ export default function Home() {
                         <h6>Algorithm Strategy</h6>
                       </li>
                       <li>
-                        <h6>Object Oriented Programming</h6>
-                      </li>
-                      <li>
-                        <h6>Manual & Automation Testing</h6>
-                      </li>
-                      <li>
-                        <h6>Web & Database Security</h6>
+                        <h6>SOAP, REST, & GraphQL Web Services</h6>
                       </li>
                       <li>
                         <h6>Query Optimization</h6>
                       </li>
                       <li>
-                        <h6>SOAP, REST, & GraphQL Web Services</h6>
+                        <h6>Security</h6>
+                      </li>
+                      <li>
+                        <h6>Manual & Automation Testing</h6>
                       </li>
                       <li>
                         <h6>Cloud Computing</h6>
                       </li>
                       <li>
-                        <h6>Artificial Intelligence</h6>
-                      </li>
-                      <li>
-                        <h6>Machine Learning</h6>
+                        <h6>AI, ML, & Prompt Engineering</h6>
                       </li>
                     </ul>
                   </div>
@@ -833,22 +825,25 @@ export default function Home() {
                     </h6>
                     <ul>
                       <li>
-                        <h6>ReactJS</h6>
+                        <h6>React.js</h6>
                       </li>
                       <li>
-                        <h6>VueJS</h6>
+                        <h6>Vue.js</h6>
                       </li>
                       <li>
-                        <h6>AngularJS</h6>
+                        <h6>Angular.js</h6>
                       </li>
                       <li>
-                        <h6>NextJS</h6>
+                        <h6>Next.js</h6>
                       </li>
                       <li>
                         <h6>React Native</h6>
                       </li>
                       <li>
                         <h6>Android Studio</h6>
+                      </li>
+                      <li>
+                        <h6>Unity</h6>
                       </li>
                     </ul>
                     <hr></hr>
@@ -857,7 +852,7 @@ export default function Home() {
                     </h6>
                     <ul>
                       <li>
-                        <h6>NodeJS (ExpressJS, NestJS, HapiJS)</h6>
+                        <h6>Node.js (Express.js, Nest.js, Hapi.js, Fastify)</h6>
                       </li>
                       <li>
                         <h6>Python (Flask, Django)</h6>
@@ -869,7 +864,7 @@ export default function Home() {
                         <h6>PHP (Laravel, CodeIgniter)</h6>
                       </li>
                       <li>
-                        <h6>C# (.NET, Unity)</h6>
+                        <h6>C# (.NET)</h6>
                       </li>
                       <li>
                         <h6>Java (Spring Boot, JAX-WS, JavaFX, Swing)</h6>
@@ -901,7 +896,43 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Cloud</b>
+                      <b>Message Brokering</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Kafka</h6>
+                      </li>
+                      <li>
+                        <h6>ActiveMQ</h6>
+                      </li>
+                      <li>
+                        <h6>Artemis</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Distributed Computing</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Apache Spark</h6>
+                      </li>
+                      <li>
+                        <h6>Apache Hadoop</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Workflow Automation</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Apache Airflow</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Cloud Computing</b>
                     </h6>
                     <ul>
                       <li>
@@ -954,24 +985,6 @@ export default function Home() {
                     <ul>
                       <li>
                         <h6>Ant Design</h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
-                      <b>Workflow Automation</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>Apache Airflow</h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
-                      <b>Message Queuing</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>ActiveMQ</h6>
                       </li>
                     </ul>
                     <hr></hr>

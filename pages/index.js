@@ -387,17 +387,14 @@ export default function Home() {
               <h4 className={custom.headersubtitle}>Hello, I am</h4>
               <h1 className={custom.headertitle}>Willy Wilsen</h1>
               <h6 className={custom.headermono}>
-                Software Engineer | Data Engineer |
-                <br></br>
-                Technical Lead | System Analyst |
-                <br></br>
-                Cyber Security Engineer | Software QA Engineer |
-                <br></br>
-                Associate Cloud Engineer (ACE)
+                Software Engineer | Data Engineer |<br></br>
+                Technical Lead | System Analyst |<br></br>
+                Cyber Security Engineer | Software QA Engineer |<br></br>
+                Associate Cloud Engineer (ACE) | Prompt Engineer
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1PoX2rw8GFXhOkFaI4IdVUBF2nFXvw2x0&export=download"
+                href="https://drive.google.com/uc?id=1iFgttqjFKeDaCOcydMm486OOjCgghTB-&export=download"
                 target="_blank"
               >
                 <button
@@ -418,11 +415,19 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                Highly skilled and versatile professional with expertise in Software Engineering, Data Engineering, Technical Leadership, Cyber Security, System Analysis, Software QA, and Cloud Engineering. Adept at designing and developing innovative solutions to complex technical challenges. Proven ability to lead and collaborate with cross-functional teams, ensuring successful project delivery. Curious, adaptable, and continuously seeking opportunities to provide secure and efficient solutions that elevate organizational performance.
+                Highly skilled and versatile professional with expertise in
+                Software Engineering, Data Engineering, Technical Leadership,
+                Cyber Security, System Analysis, Software QA, Cloud Engineering,
+                and Prompt Engineering. Adept at designing and developing
+                innovative solutions to complex technical challenges. Proven
+                ability to lead and collaborate with cross-functional teams,
+                ensuring successful project delivery. Curious, adaptable, and
+                continuously seeking opportunities to provide secure and
+                efficient solutions that elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1PoX2rw8GFXhOkFaI4IdVUBF2nFXvw2x0&export=download"
+                href="https://drive.google.com/uc?id=1iFgttqjFKeDaCOcydMm486OOjCgghTB-&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -745,7 +750,9 @@ export default function Home() {
                     </h6>
                     <ul>
                       <li>
-                        <h6>NoSQL, Big Data, and Spark Foundations (Jan 2024)</h6>
+                        <h6>
+                          NoSQL, Big Data, and Spark Foundations (Jan 2024)
+                        </h6>
                       </li>
                     </ul>
                     <hr></hr>

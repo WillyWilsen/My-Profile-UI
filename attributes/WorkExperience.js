@@ -7,7 +7,7 @@ export const WorkExperience = [
     company: "Eduqat (PT Edukasi Global Teknologi)",
     description:
       "Eduqat is a platform that uses AI to simplify tasks, generate curriculums, and grade assignments for educators. <b>My responsibilities:</b><br>1. Maintain and develop solutions for ongoing projects as well as to work on new upcoming projects<br>2. Ensure the delivery of features that are well documented & technologically sound with close attention to good coding practices, data structures & collaborative problem-solving<br><b>Skills:</b> Node.js · AWS Lambda · GraphQL · AI Prompting · Amazon Simple Notification Service (SNS)",
-    sequence: { $numberInt: "15" },
+    sequence: { $numberInt: "14" },
   },
   {
     _id: { $oid: "6635f798fe5e3cb138acc5a4" },
@@ -17,7 +17,7 @@ export const WorkExperience = [
     company: "Planet Surf (PT Planet Selancar Mandiri)",
     description:
       "Planet Surf is a fashion retail company specializing in youth clothing and surfwear with international brands. <b>My responsibilities:</b><br>1. Collaborate with the designers and product managers on features<br>2. Explain technical constraints, explore edge cases<br>3. Design the technical specifications of features and implementing them, while considering existing systems and future extensions<br>4. Collaborate and work with other engineers<br>5. Coordinate testing with design and product teams<br>6. Triage and fix bugs as they arise<br>7. Increase test coverage of the system<br>8. Devise a test/regression plan that includes all the behaviors and test cases expected<br>9. If necessary, devise a deployment plan that may involve e.g. feature flagging, scripts that need to be run<br>10. Contribute to and write documentation for the team<br>11. Participate in manual regression testing with the rest of the engineering team<br>12. Rotate through a regular oncall schedule with the rest of the engineering team<br><b>Skills:</b> Laravel · Next.js · MySQL · Amazon EC2 · Python (Programming Language) · Apache Airflow · SAP HANA · Node.js",
-    sequence: { $numberInt: "14" },
+    sequence: { $numberInt: "13" },
   },
   {
     _id: { $oid: "647b19f827b072d12d76ac10" },
@@ -27,7 +27,7 @@ export const WorkExperience = [
     company: "Jatis Mobile (PT Informasi Teknologi Indonesia)",
     description:
       "Jatis Mobile is a digital communication & distribution company gaining market experience and insights since 2002. Jatis Mobile's client portfolio builds up to more than 500 corporate clients. <b>My responsibilities:</b><br>1. Developing front-end website architecture<br>2. Designing user interactions on web pages<br>3. Developing back-end website applications<br>4. Creating servers and databases for functionality<br>5. Ensuring cross-platform optimization for mobile phones<br>6. Ensuring responsiveness of applications<br>7. Working alongside graphic designers for web design features<br>8. Seeing through a project from conception to finished product<br>9. Designing and developing APIs<br>10. Meeting both technical and consumer needs<br>11. Staying abreast of developments in web applications and programming languages<br><b>Skills:</b> Rust (Programming Language) · Unit Testing · ASP.NET · Spring Boot · Gin · ActiveMQ · CodeIgniter · WinSCP · Microsoft SQL Server · Data Warehousing · MySQL · Laravel",
-    sequence: { $numberInt: "13" },
+    sequence: { $numberInt: "12" },
     __v: { $numberInt: "0" },
   },
   {
@@ -38,16 +38,6 @@ export const WorkExperience = [
     company: "Dicoding Indonesia",
     description:
       "Arcade Facilitator is a coding scholarship program from Google Cloud with the concept of gamification to add or improve the skills of digital talents in the fields of cloud computing, application development, big data & artificial intelligence/machine learning. <b>My responsibilities:</b>\n<br>1. Complete labs/milestones for participants to pass as quickly and easily as possible so that participants can earn Arcade + Bonus Points and redeem them for various attractive prizes\n<br>2. Assist with accessing and claiming the 2-month Google Cloud Skills Boost credits/tokens that participants need to work on skill badges and earn points\n<br>3. Provide a communication group with other participants to discuss and connect\n<br>4. Provide the latest information about the Arcade program\n<br><b>Skills:</b> Cloud Computing · Google Cloud Platform (GCP) · Mentoring",
-    sequence: { $numberInt: "12" },
-  },
-  {
-    _id: { $oid: "668919fdc7a0bdb9c875b565" },
-    from: "Feb 2024",
-    to: "May 2024",
-    job_position: "Junior Security Operation Center Analyst",
-    company: "Digital Talent Scholarship",
-    description:
-      "Junior SOC Analyst Bootcamp learns about routing, switching, and cyber security as a Security Operations Center (SOC) Analyst. <b>Syllabus:</b>\n<br>1. Cybersecurity Threats, Vulnerabilities, and Attacks\n<br>2. Securing Networks and Attacking the Foundation\n<br>3. Network Security Infrastructure\n<br>4. Understanding Defense\n<br>5. System and Network Defense\n<br>6. Zone-Based Policy Firewalls\n<br>7. Governance and Compliance\n<br>8. Security Assessments\n<br>9. The Windows Operating System\n<br>10. Linux Overview\n<br>11. Network Protocols\n<br>12. Attackers and Their Tools\n<br>13. Understanding Defense\n<br>14. Access Control\n<br>15. Threat Intelligence\n<br>16. Cryptography\n<br>17. Endpoint Protection\n<br>18. Endpoint Vulnerability Assessment\n<br>19. Technologies and Protocols\n<br>20. Network Security Data\n<br>21. Evaluating Alerts\n<br>22. Working with Network Security Data\n<br><b>Skills:</b> Security · Operating Systems · Cryptography · Threat & Vulnerability Management · Network Security",
     sequence: { $numberInt: "11" },
   },
   {

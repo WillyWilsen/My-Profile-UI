@@ -394,7 +394,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1iFgttqjFKeDaCOcydMm486OOjCgghTB-&export=download"
+                href="https://drive.google.com/uc?id=1bbaUez3OAjbji9lkTiACxbbiedvnXVkg&export=download"
                 target="_blank"
               >
                 <button
@@ -427,7 +427,7 @@ export default function Home() {
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1iFgttqjFKeDaCOcydMm486OOjCgghTB-&export=download"
+                href="https://drive.google.com/uc?id=1bbaUez3OAjbji9lkTiACxbbiedvnXVkg&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -679,7 +679,7 @@ export default function Home() {
                       <b>Bandung Institute of Technology</b>
                     </p>
                     <p className="subtitle">
-                      Bachelor of Engineering, Computer Science (3.58/4.00)
+                      Bachelor of Engineering, Computer Science (3.62/4.00)
                     </p>
                   </div>
                 </div>
@@ -990,6 +990,12 @@ export default function Home() {
                       <b>UI Library</b>
                     </h6>
                     <ul>
+                      <li>
+                        <h6>Material UI</h6>
+                      </li>
+                      <li>
+                        <h6>Chakra UI</h6>
+                      </li>
                       <li>
                         <h6>Ant Design</h6>
                       </li>

@@ -394,7 +394,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1bbaUez3OAjbji9lkTiACxbbiedvnXVkg&export=download"
+                href="https://drive.google.com/uc?id=1LyWDP9E5kWUlqUHnt2iN0NHP4pcf0H-f&export=download"
                 target="_blank"
               >
                 <button
@@ -427,7 +427,7 @@ export default function Home() {
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1bbaUez3OAjbji9lkTiACxbbiedvnXVkg&export=download"
+                href="https://drive.google.com/uc?id=1LyWDP9E5kWUlqUHnt2iN0NHP4pcf0H-f&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -651,8 +651,7 @@ export default function Home() {
                           </h6>
                           <p>
                             <b>
-                              {workExperience.job_position} at{" "}
-                              {workExperience.company}
+                              {workExperience.job_position} at {workExperience.company} · {workExperience.job_type}
                             </b>
                           </p>
                           <div id={`work-experience_${key}`}>
@@ -674,12 +673,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className={custom.cardbody}>
-                    <h6 className="title text-danger">Aug 2020 - 2024</h6>
+                    <h6 className="title text-danger">Aug 2020 - Sep 2024</h6>
                     <p>
                       <b>Bandung Institute of Technology</b>
                     </p>
                     <p className="subtitle">
-                      Bachelor of Engineering, Computer Science (3.62/4.00)
+                      Bachelor of Engineering, Computer Science (3.62/4.00)<br/>
+                      Thesis: Application Development with LLM for Generation and Visualization of BPMN from Legal Documents
                     </p>
                   </div>
                 </div>

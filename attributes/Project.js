@@ -15,8 +15,7 @@ export const Project = [
       "BEAST application is an application to make it easier for members, admins and coaches from the Bandung Tennis Enthusiast organization to carry out the tennis training management process. This application is created using <b>React Native</b>, <b>Express.js</b>, and <b>Postgre SQL</b>. The features of the BEAST application are to register for training by members, process payment for training by members, confirm the training schedule by the coach, and confirm the training registration process by the admin. Apart from that, in the BEAST software it is also possible for users to view training history, payment history, tournaments, field list, coach list, and media related to the training that has been carried out.",
     image_path: "/projects/BEAST.png",
     link: "https://gitlab.informatika.org/if3250_2023_k03_01_pro-13",
-    sequence: "22",
-    __v: "0",
+    sequence: { $numberInt: "22" },
   },
   {
     _id: { $oid: "6458a81e935faaf97896feb0" },
@@ -26,7 +25,6 @@ export const Project = [
     image_path: "/projects/Breast_Cancer.png",
     link: "https://github.com/WillyWilsen/IF3270_Tucil_ML",
     sequence: { $numberInt: "21" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "6448b44a935faaf97896fe8d" },
@@ -36,7 +34,6 @@ export const Project = [
     image_path: "/projects/GranEterno.png",
     link: "https://graneterno.omni.gg",
     sequence: { $numberInt: "20" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "6447ffad935faaf97896fe7a" },
@@ -46,7 +43,6 @@ export const Project = [
     image_path: "/projects/WebGL.png",
     link: "https://github.com/WillyWilsen/IF3260_Tugas3_K03_G12",
     sequence: { $numberInt: "19" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "6447d7bd935faaf97896fe74" },
@@ -56,7 +52,6 @@ export const Project = [
     image_path: "/projects/VMall.png",
     link: "",
     sequence: { $numberInt: "18" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "6446f3ae935faaf97896fe58" },
@@ -66,7 +61,6 @@ export const Project = [
     image_path: "/projects/ESS.png",
     link: "https://gitlab.informatika.org/JeremyRio/if3210-2023-unity-ess",
     sequence: { $numberInt: "17" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "6446f1a9935faaf97896fe53" },
@@ -76,7 +70,6 @@ export const Project = [
     image_path: "/projects/Majika.jpg",
     link: "https://gitlab.informatika.org/if3210-2023-android-mlk/malika",
     sequence: { $numberInt: "16" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "639ef6ae296bbe6bd7b76101" },
@@ -86,7 +79,6 @@ export const Project = [
     image_path: "/projects/BinotifyV2.jpg",
     link: "https://gitlab.informatika.org/if3110-2022-k01-02-10",
     sequence: { $numberInt: "15" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "639e3291296bbe6bd7b760bc" },
@@ -96,7 +88,6 @@ export const Project = [
     image_path: "/projects/Binotify.png",
     link: "http://binotify.epizy.com/public/",
     sequence: { $numberInt: "14" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "631a1568a2b7ef0b2f82a1a5" },
@@ -105,7 +96,6 @@ export const Project = [
       "BNMO website is created using <b>React.js with CI/CD</b>, <b>Spring Boot with Docker</b> and <b>CI/CD</b>, and <b>PostgreSQL</b>. This website is also created using <b>Authorization Bearer Token</b>, <b>API Caching</b>, <b>API Documentation (Swagger)</b>, and deployed on <b>Heroku</b>. This website consists of admin and customer roles. Customer can register, request balance additions, view profile and balance information, transfer balances to other customer, view the history of balance addition requests along with the status and verification time of the request, and view transaction history. Admin can verify customer, verify balance additions, and search for customer data.",
     image_path: "/projects/BNMO.png",
     link: "https://bnmo.herokuapp.com/",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "13" },
   },
   {
@@ -115,7 +105,6 @@ export const Project = [
       "IMPT Report website is created by PT Adaro Indonesia using <b>Vue.js</b>, <b>Laravel</b>, and <b>PostgreSQL</b> to monitor the port area arriving and departing on a set schedule. As a Full Stack Engineer in Zinergo, I continued to build their website by adding 8 export excel features where the excel datas are taken from database to get important information from each port area. Some excel features generate charts and are automatically sent by email.",
     image_path: "/projects/IMPT_Report.png",
     link: "",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "12" },
   },
   {
@@ -125,7 +114,6 @@ export const Project = [
       "MST-Based Clustering website is created using <b>React.js with Typescript</b> and <b>Docker</b>, <b>Go with Docker</b> and <b>CI/CD</b>, and <b>MySQL</b>. MST-Based Clustering is one of the most widely used unsupervised algorithms in machine learning. If given a dataset with n random points, this algorithm will build a Minimum Spanning Tree (MST), then group the data by cutting the edge of the MST starting from the side with the largest weight. The number of edges that are cut determines the number of clusters to be created, for every n clusters there will be a maximum of n-1 edge cutting.",
     image_path: "/projects/MST-Based_Clustering.png",
     link: "https://github.com/TubesForLyfe/MST-Based-Clustering-UI",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "11" },
   },
   {
@@ -135,7 +123,6 @@ export const Project = [
       "Buzzer Checker website is created using <b>Vue.js</b> and <b>Flask</b> to check a twitter username is a buzzer account or not. The checking process begins by dividing the account into three-dimensional vector then the vector is compared with the vector of a buzzer account.",
     image_path: "/projects/Buzzer_Checker.png",
     link: "https://github.com/TubesForLyfe/Buzzer-Checker",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "10" },
   },
   {
@@ -145,7 +132,6 @@ export const Project = [
       "NIM Finder website is created using <b>React.js</b> and <b>Progressive Web App (PWA)</b> to find Bandung Institute of Technology student identity by student ID number, department/major and year of className, and name.",
     image_path: "/projects/NIM_Finder.png",
     link: "https://nim-finder.netlify.app/",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "9" },
   },
   {
@@ -155,7 +141,6 @@ export const Project = [
       "DNA website is created using <b>React.js</b>, <b>Go</b>, and <b>MySQL</b>. Users can add new diseases to the database. Users can also predict disease by inputting the patient's DNA and provide results with a certain percent match. Users can also search for disease prediction history.",
     image_path: "/projects/DNA.png",
     link: "https://tesdnanamanyamauapa.netlify.app/",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "8" },
   },
   {
@@ -166,7 +151,6 @@ export const Project = [
     image_path: "/projects/Aether_Wars.png",
     link: "https://github.com/TubesForLyfe/Tugas-Besar-OOP-2",
     sequence: { $numberInt: "7" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "631a0dbfa2b7ef0b2f82a196" },
@@ -175,7 +159,6 @@ export const Project = [
       "Ibu Canggih website is created using <b>React.js</b>, <b>Express.js</b>, and <b>MySQL</b>. Users can edit profiles and add reward points on the page provided by filling in the required data. This website can display the total points that have been earned by the user and details of each valid and invalid reward point. The website also has admin features that can manage users, whatsapp groups, events, articles, and banners.",
     image_path: "/projects/Ibu_Canggih.png",
     link: "https://ibu2canggih.id/",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "6" },
   },
   {
@@ -186,7 +169,6 @@ export const Project = [
     image_path: "/projects/15-Puzzle.png",
     link: "https://github.com/TubesForLyfe/Tugas-Kecil-3-Strategi-Algoritma",
     sequence: { $numberInt: "5" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "6409aebd978163a29376ad00" },
@@ -196,7 +178,6 @@ export const Project = [
     image_path: "/projects/Folder_Crawling.png",
     link: "https://github.com/TubesForLyfe/Tubes2_13520128",
     sequence: { $numberInt: "4" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "631a0d19a2b7ef0b2f82a193" },
@@ -205,7 +186,6 @@ export const Project = [
       "Vaccination Participant Prediction website is created using <b>Shiny</b> script in <b>R</b> language to make predictions about vaccination participants using Markov Average-based Weighted Fuzzy Time Series model.",
     image_path: "/projects/Vaccination_Prediction.png",
     link: "https://github.com/TubesForLyfe/Prediksi-Peserta-Vaksinasi",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "3" },
   },
   {
@@ -216,7 +196,6 @@ export const Project = [
     image_path: "/projects/SPE_ITB_SC.png",
     link: "https://speitssc.org",
     sequence: { $numberInt: "2" },
-    __v: { $numberInt: "0" },
   },
   {
     _id: { $oid: "631a0caea2b7ef0b2f82a190" },
@@ -225,7 +204,6 @@ export const Project = [
       "Image Compressor website is created using <b>Flask</b> to compress selected images with the desired compression percentage.",
     image_path: "/projects/Image_Compressor.png",
     link: "https://github.com/TubesForLyfe/Algeo02-20137",
-    __v: { $numberInt: "0" },
     sequence: { $numberInt: "1" },
   },
 ];

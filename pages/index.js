@@ -679,7 +679,7 @@ export default function Home() {
                     </p>
                     <p className="subtitle">
                       Bachelor of Engineering, Computer Science (3.62/4.00)<br/>
-                      Thesis: Application Development with LLM for Generation and Visualization of BPMN from Legal Documents
+                      <b>Thesis:</b> Application Development with LLM for Generation and Visualization of BPMN from Legal Documents
                     </p>
                   </div>
                 </div>

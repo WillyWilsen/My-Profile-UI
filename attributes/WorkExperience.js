@@ -2,7 +2,7 @@ export const WorkExperience = [
   {
     _id: { $oid: "66360105fe5e3cb138acc5a7" },
     from: "Aug 2023",
-    to: "Jul 2024",
+    to: "Sep 2024",
     job_position: "Junior Back End Engineer",
     job_type: "Part-time",
     company: "Eduqat (PT Edukasi Global Teknologi)",
@@ -13,7 +13,7 @@ export const WorkExperience = [
   {
     _id: { $oid: "6635f798fe5e3cb138acc5a4" },
     from: "Mar 2023",
-    to: "Jul 2024",
+    to: "Sep 2024",
     job_position: "Full Stack & Data Engineer",
     job_type: "Freelance",
     company: "Planet Surf (PT Planet Selancar Mandiri)",
@@ -24,7 +24,7 @@ export const WorkExperience = [
   {
     _id: { $oid: "647b19f827b072d12d76ac10" },
     from: "Nov 2022",
-    to: "Jul 2024",
+    to: "Sep 2024",
     job_position: "Software & Data Engineer",
     job_type: "Contract",
     company: "Jatis Mobile (PT Informasi Teknologi Indonesia)",

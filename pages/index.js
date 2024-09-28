@@ -394,7 +394,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1LyWDP9E5kWUlqUHnt2iN0NHP4pcf0H-f&export=download"
+                href="https://drive.google.com/uc?id=1OGyeYZXKOIXeF9BfbGXNF5TeO3RgUC3F&export=download"
                 target="_blank"
               >
                 <button
@@ -418,16 +418,16 @@ export default function Home() {
                 Highly skilled and versatile professional with expertise in
                 Software Engineering, Data Engineering, Technical Leadership,
                 Cyber Security, System Analysis, Software QA, Cloud Engineering,
-                and Prompt Engineering. Adept at designing and developing
-                innovative solutions to complex technical challenges. Proven
-                ability to lead and collaborate with cross-functional teams,
-                ensuring successful project delivery. Curious, adaptable, and
-                continuously seeking opportunities to provide secure and
-                efficient solutions that elevate organizational performance.
+                and Prompt Engineering for 2+ years of experience. Adept at 
+                designing and developing innovative solutions to complex technical 
+                challenges. Proven ability to lead and collaborate with cross-functional 
+                teams, ensuring successful project delivery. Curious, adaptable, and
+                continuously seeking opportunities to provide secure and efficient 
+                solutions that elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1LyWDP9E5kWUlqUHnt2iN0NHP4pcf0H-f&export=download"
+                href="https://drive.google.com/uc?id=1OGyeYZXKOIXeF9BfbGXNF5TeO3RgUC3F&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -678,7 +678,7 @@ export default function Home() {
                       <b>Bandung Institute of Technology</b>
                     </p>
                     <p className="subtitle">
-                      Bachelor of Engineering, Computer Science (3.62/4.00)<br/>
+                      Bachelor of Engineering, Computer Science (3.63/4.00)<br/>
                       <b>Thesis:</b> Application Development with LLM for Generation and Visualization of BPMN from Legal Documents
                     </p>
                   </div>

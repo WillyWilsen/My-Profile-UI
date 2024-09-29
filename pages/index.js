@@ -394,7 +394,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1OGyeYZXKOIXeF9BfbGXNF5TeO3RgUC3F&export=download"
+                href="https://drive.google.com/uc?id=1TbPyx-K7WJZ3QQHee60tMcSKf7Bled_Y&export=download"
                 target="_blank"
               >
                 <button
@@ -415,7 +415,8 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                Highly skilled and versatile professional with expertise in
+                A graduate in Computer Science from Bandung Institute of Technology, 
+                who is a highly skilled and versatile professional with expertise in
                 Software Engineering, Data Engineering, Technical Leadership,
                 Cyber Security, System Analysis, Software QA, Cloud Engineering,
                 and Prompt Engineering for 2+ years of experience. Adept at 
@@ -427,7 +428,7 @@ export default function Home() {
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1OGyeYZXKOIXeF9BfbGXNF5TeO3RgUC3F&export=download"
+                href="https://drive.google.com/uc?id=1TbPyx-K7WJZ3QQHee60tMcSKf7Bled_Y&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -757,27 +758,15 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Coursera</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>
-                          Preparing for Google Cloud Certification: Cloud
-                          Security Engineer (May 2023)
-                        </h6>
-                      </li>
-                      <li>
-                        <h6>
-                          Preparing for Google Cloud Certification: Cloud
-                          Network Engineer (May 2023)
-                        </h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
                       <b>Dicoding</b>
                     </h6>
                     <ul>
+                      <li>
+                        <h6>Basic Data Science (Sep 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Basic SQL (Sep 2024)</h6>
+                      </li>
                       <li>
                         <h6>Becoming a Google Cloud Architect (Dec 2023)</h6>
                       </li>
@@ -789,21 +778,6 @@ export default function Home() {
                       </li>
                       <li>
                         <h6>(Google Cloud) Back-End Basic (Aug 2023)</h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
-                      <b>LinkedIn</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>
-                          Cloud Computing Careers and Certifications: First
-                          Steps (Apr 2023)
-                        </h6>
-                      </li>
-                      <li>
-                        <h6>Cybersecurity at Work (Apr 2023)</h6>
                       </li>
                     </ul>
                     <hr></hr>

@@ -709,17 +709,6 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>IBM</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>
-                          NoSQL, Big Data, and Spark Foundations (Jan 2024)
-                        </h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
                       <b>Dicoding</b>
                     </h6>
                     <ul>

@@ -388,13 +388,11 @@ export default function Home() {
               <h1 className={custom.headertitle}>Willy Wilsen</h1>
               <h6 className={custom.headermono}>
                 Software Engineer | Data Engineer |<br></br>
-                Technical Lead | System Analyst |<br></br>
-                Cyber Security Engineer | Software QA Engineer |<br></br>
-                Associate Cloud Engineer (ACE) | Prompt Engineer
+                System Analyst | Associate Cloud Engineer (ACE)
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1TbPyx-K7WJZ3QQHee60tMcSKf7Bled_Y&export=download"
+                href="https://drive.google.com/uc?id=1Qq9K-REhb8iJQPeBNOIz-_4mtNdxdjND&export=download"
                 target="_blank"
               >
                 <button
@@ -415,20 +413,18 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                A graduate in Computer Science from Bandung Institute of Technology, 
+                <b>Bachelor of Computer Science</b> graduate from <b>Bandung Institute of Technology</b>, 
                 who is a highly skilled and versatile professional with expertise in
-                Software Engineering, Data Engineering, Technical Leadership,
-                Cyber Security, System Analysis, Software QA, Cloud Engineering,
-                and Prompt Engineering for 3+ years of experience. Adept at 
-                designing and developing innovative solutions to complex technical 
-                challenges. Proven ability to lead and collaborate with cross-functional 
-                teams, ensuring successful project delivery. Curious, adaptable, and
-                continuously seeking opportunities to provide secure and efficient 
-                solutions that elevate organizational performance.
+                Software Engineering, Data Engineering, System Analysis, and Cloud
+                Engineering for <b>3+ years of experience</b>. Adept at designing and developing 
+                innovative solutions to complex technical challenges. Proven ability to 
+                lead and collaborate with cross-functional teams, ensuring successful 
+                project delivery. Curious, adaptable, and continuously seeking opportunities 
+                to provide secure and efficient solutions that elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1TbPyx-K7WJZ3QQHee60tMcSKf7Bled_Y&export=download"
+                href="https://drive.google.com/uc?id=1Qq9K-REhb8iJQPeBNOIz-_4mtNdxdjND&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -566,11 +562,8 @@ export default function Home() {
                   />
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
-                  <h6>Technical Lead</h6>
-                  <p>
-                    Experienced in project & human resource management
-                    (Intermediate).
-                  </p>
+                  <h6>System Analyst</h6>
+                  <p>Experienced in system analysis (Intermediate).</p>
                   <hr></hr>
                 </div>
               </div>
@@ -679,42 +672,11 @@ export default function Home() {
                       <b>Bandung Institute of Technology</b>
                     </p>
                     <p className="subtitle">
-                      Bachelor of Engineering, Computer Science (3.63/4.00)<br/>
+                      Bachelor of Engineering, Computer Science<br/>
+                      3.63/4.00 (Cum Laude)<br/>
+                      <br/>
                       <b>Thesis:</b> Application Development with LLM for Generation and Visualization of BPMN from Legal Documents
                     </p>
-                  </div>
-                </div>
-                <div className={custom.card}>
-                  <div className={custom.cardheader}>
-                    <div className="mt-2">
-                      <h4>Skills</h4>
-                      <span className={custom.line}></span>
-                    </div>
-                  </div>
-                  <div className={custom.cardbody}>
-                    <ul>
-                      <li>
-                        <h6>Algorithm Strategy</h6>
-                      </li>
-                      <li>
-                        <h6>SOAP, REST, & GraphQL Web Services</h6>
-                      </li>
-                      <li>
-                        <h6>Query Optimization</h6>
-                      </li>
-                      <li>
-                        <h6>Security</h6>
-                      </li>
-                      <li>
-                        <h6>Manual & Automation Testing</h6>
-                      </li>
-                      <li>
-                        <h6>Cloud Computing</h6>
-                      </li>
-                      <li>
-                        <h6>AI, ML, & Prompt Engineering</h6>
-                      </li>
-                    </ul>
                   </div>
                 </div>
                 <div className={custom.card}>
@@ -780,15 +742,6 @@ export default function Home() {
                         <h6>(Google Cloud) Back-End Basic (Aug 2023)</h6>
                       </li>
                     </ul>
-                    <hr></hr>
-                    <h6>
-                      <b>RevoU</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>Intro to Data Analytics (May 2023)</h6>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -848,7 +801,7 @@ export default function Home() {
                         <h6>C# (.NET)</h6>
                       </li>
                       <li>
-                        <h6>Java (Spring Boot, JAX-WS, JavaFX, Swing)</h6>
+                        <h6>Java (Spring Boot)</h6>
                       </li>
                       <li>
                         <h6>Rust</h6>
@@ -873,6 +826,18 @@ export default function Home() {
                       </li>
                       <li>
                         <h6>Redis</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Operating System</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Linux</h6>
+                      </li>
+                      <li>
+                        <h6>Windows</h6>
                       </li>
                     </ul>
                     <hr></hr>
@@ -945,53 +910,6 @@ export default function Home() {
                     <ul>
                       <li>
                         <h6>Selenium</h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
-                      <b>Penetration Testing</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>Burp Suite</h6>
-                      </li>
-                      <li>
-                        <h6>OWASP ZAP</h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
-                      <b>UI Library</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>Material UI</h6>
-                      </li>
-                      <li>
-                        <h6>Chakra UI</h6>
-                      </li>
-                      <li>
-                        <h6>Ant Design</h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
-                    <h6>
-                      <b>Others</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>Linux</h6>
-                      </li>
-                      <li>
-                        <h6>Typescript</h6>
-                      </li>
-                      <li>
-                        <h6>WebGL</h6>
-                      </li>
-                      <li>
-                        <h6>
-                          Google Tool (Docs, Spreadsheet, Data Studio, Slides)
-                        </h6>
                       </li>
                     </ul>
                   </div>

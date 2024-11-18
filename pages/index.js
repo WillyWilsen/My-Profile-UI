@@ -688,6 +688,24 @@ export default function Home() {
                   </div>
                   <div className={custom.cardbody}>
                     <h6>
+                      <b>Cisco</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>CyberOps Associate (May 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Cyber Threat Management (Apr 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Endpoint Security (Apr 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Network Defense (Apr 2024)</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
                       <b>Google Cloud</b>
                     </h6>
                     <ul>
@@ -713,6 +731,12 @@ export default function Home() {
                     </h6>
                     <ul>
                       <li>
+                        <h6>Basic AI (Nov 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Data Analysis with Python (Nov 2024)</h6>
+                      </li>
+                      <li>
                         <h6>Basic Data Science (Sep 2024)</h6>
                       </li>
                       <li>
@@ -723,6 +747,9 @@ export default function Home() {
                       </li>
                       <li>
                         <h6>Basic Machine Learning (Dec 2023)</h6>
+                      </li>
+                      <li>
+                        <h6>Basic Data Visualization (Dec 2023)</h6>
                       </li>
                       <li>
                         <h6>Becoming a Google Cloud Engineer (Oct 2023)</h6>

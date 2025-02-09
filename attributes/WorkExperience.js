@@ -1,30 +1,30 @@
 export const WorkExperience = [
   {
-    _id: { $oid: "66360105fe5e3cb138acc5a7" },
-    from: "Aug 2023",
-    to: "Current",
-    job_position: "Junior Back End Engineer",
-    job_type: "Part-time",
-    company: "Eduqat (PT Edukasi Global Teknologi)",
-    description:
-      "<b>My responsibilities:</b><br>1. Maintain and develop solutions for ongoing projects as well as to work on new upcoming projects<br>2. Ensure the delivery of features that are well documented & technologically sound with close attention to good coding practices, data structures & collaborative problem-solving<br><b>Skills:</b> Node.js · AWS Lambda · GraphQL · AI Prompting · Amazon Simple Notification Service (SNS) · NestJS",
-    sequence: { $numberInt: "13" },
-  },
-  {
     _id: { $oid: "6635f798fe5e3cb138acc5a4" },
     from: "Mar 2023",
-    to: "Nov 2024",
+    to: "Current",
     job_position: "Full Stack & Data Engineer",
     job_type: "Freelance",
     company: "Planet Surf (PT Planet Selancar Mandiri)",
     description:
       "<b>My responsibilities:</b><br>1. Collaborate with the designers and product managers on features<br>2. Explain technical constraints, explore edge cases<br>3. Design the technical specifications of features and implementing them, while considering existing systems and future extensions<br>4. Collaborate and work with other engineers<br>5. Coordinate testing with design and product teams<br>6. Triage and fix bugs as they arise<br>7. Increase test coverage of the system<br>8. Devise a test/regression plan that includes all the behaviors and test cases expected<br>9. If necessary, devise a deployment plan that may involve e.g. feature flagging, scripts that need to be run<br>10. Contribute to and write documentation for the team<br>11. Participate in manual regression testing with the rest of the engineering team<br>12. Rotate through a regular oncall schedule with the rest of the engineering team<br><b>Skills:</b> Laravel · Next.js · MySQL · Amazon EC2 · Python (Programming Language) · Apache Airflow · SAP HANA · Node.js",
+    sequence: { $numberInt: "13" },
+  },
+  {
+    _id: { $oid: "66360105fe5e3cb138acc5a7" },
+    from: "Aug 2023",
+    to: "Jan 2025",
+    job_position: "Junior Back End Engineer",
+    job_type: "Part-time",
+    company: "Eduqat (PT Edukasi Global Teknologi)",
+    description:
+      "<b>My responsibilities:</b><br>1. Maintain and develop solutions for ongoing projects as well as to work on new upcoming projects<br>2. Ensure the delivery of features that are well documented & technologically sound with close attention to good coding practices, data structures & collaborative problem-solving<br><b>Skills:</b> Node.js · AWS Lambda · GraphQL · AI Prompting · Amazon Simple Notification Service (SNS) · NestJS",
     sequence: { $numberInt: "12" },
   },
   {
     _id: { $oid: "647b19f827b072d12d76ac10" },
     from: "Nov 2022",
-    to: "Nov 2024",
+    to: "Jan 2025",
     job_position: "Software & Data Engineer",
     job_type: "Contract",
     company: "Jatis Mobile (PT Informasi Teknologi Indonesia)",

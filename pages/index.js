@@ -392,7 +392,7 @@ export default function Home() {
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1kec2Hflb7-Xb8IIVc4u7-BTzmqvZp9Tf&export=download"
+                href="https://drive.google.com/uc?id=14VIg_4K-ht9SulM3j3zm2cXBr9DIhU7j&export=download"
                 target="_blank"
               >
                 <button
@@ -413,18 +413,21 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                <b>Bachelor of Computer Science</b> graduate from <b>Bandung Institute of Technology</b>, 
-                who is a highly skilled and versatile professional with expertise in
-                Software Engineering, Data Engineering, System Analysis, and Cloud
-                Engineering for <b>3+ years of experience</b>. Adept at designing and developing 
-                innovative solutions to complex technical challenges. Proven ability to 
-                lead and collaborate with cross-functional teams, ensuring successful 
-                project delivery. Curious, adaptable, and continuously seeking opportunities 
-                to provide secure and efficient solutions that elevate organizational performance.
+                <b>Bachelor of Computer Science</b> graduate from{" "}
+                <b>Bandung Institute of Technology</b>, who is a highly skilled
+                and versatile professional with expertise in Software
+                Engineering, Data Engineering, System Analysis, and Cloud
+                Engineering for <b>3+ years of experience</b>. Adept at
+                designing and developing innovative solutions to complex
+                technical challenges. Proven ability to lead and collaborate
+                with cross-functional teams, ensuring successful project
+                delivery. Curious, adaptable, and continuously seeking
+                opportunities to provide secure and efficient solutions that
+                elevate organizational performance.
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=1kec2Hflb7-Xb8IIVc4u7-BTzmqvZp9Tf&export=download"
+                href="https://drive.google.com/uc?id=14VIg_4K-ht9SulM3j3zm2cXBr9DIhU7j&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -645,7 +648,9 @@ export default function Home() {
                           </h6>
                           <p>
                             <b>
-                              {workExperience.job_position} at {workExperience.company} · {workExperience.job_type}
+                              {workExperience.job_position} at{" "}
+                              {workExperience.company} ·{" "}
+                              {workExperience.job_type}
                             </b>
                           </p>
                           <div id={`work-experience_${key}`}>
@@ -672,10 +677,13 @@ export default function Home() {
                       <b>Bandung Institute of Technology</b>
                     </p>
                     <p className="subtitle">
-                      Bachelor of Engineering, Computer Science<br/>
-                      3.63/4.00 (Cum Laude)<br/>
-                      <br/>
-                      <b>Thesis:</b> Application Development with LLM for Generation and Visualization of BPMN from Legal Documents
+                      Bachelor of Engineering, Computer Science
+                      <br />
+                      3.63/4.00 (Cum Laude)
+                      <br />
+                      <br />
+                      <b>Thesis:</b> Application Development with LLM for
+                      Generation and Visualization of BPMN from Legal Documents
                     </p>
                   </div>
                 </div>

@@ -322,7 +322,7 @@ export default function Home() {
                 <a
                   rel="noreferrer"
                   className={`${custom.sociallink}`}
-                  href="https://github.com/TubesForLyfe"
+                  href="https://github.com/WillyWilsen"
                   target="_blank"
                 >
                   <Image

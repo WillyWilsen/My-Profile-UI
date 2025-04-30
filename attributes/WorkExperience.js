@@ -6,7 +6,7 @@ export const WorkExperience = [
     job_position: "Software & Data Engineer",
     job_type: "Contract",
     company: "Jatis Mobile (PT Informasi Teknologi Indonesia)",
-    description: `1. Completed over 150 tasks across data, software development, and networking.<br>
+    description: `1. Completed over 160 tasks across data, software development, and networking.<br>
 2. Developed stored procedures to optimize database performance.<br>
 3. Enhanced front-end and back-end features, improving application functionality.<br>
 4. Implemented flexible scheduling features such as recurring jobs, one-time immediate runs, and custom frequency options to meet diverse user needs.<br>

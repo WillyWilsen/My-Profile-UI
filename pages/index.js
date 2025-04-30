@@ -388,11 +388,12 @@ export default function Home() {
               <h1 className={custom.headertitle}>Willy Wilsen</h1>
               <h6 className={custom.headermono}>
                 Software Engineer | Data Engineer |<br></br>
-                System Analyst | Associate Cloud Engineer (ACE)
+                System Analyst | Associate Cloud Engineer (ACE) | <br></br>
+                AI Engineer
               </h6>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=14VIg_4K-ht9SulM3j3zm2cXBr9DIhU7j&export=download"
+                href="https://drive.google.com/uc?id=1BkvKYajuPMLdrXx45QSb7yoSxlDfLkgh&export=download"
                 target="_blank"
               >
                 <button
@@ -427,7 +428,7 @@ export default function Home() {
               </p>
               <a
                 rel="noreferrer"
-                href="https://drive.google.com/uc?id=14VIg_4K-ht9SulM3j3zm2cXBr9DIhU7j&export=download"
+                href="https://drive.google.com/uc?id=1BkvKYajuPMLdrXx45QSb7yoSxlDfLkgh&export=download"
                 target="_blank"
               >
                 <button className="btn btn-outline-danger">
@@ -536,7 +537,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>Software Development</h6>
-                  <p>Experienced in developing software (Advanced).</p>
+                  <p>Advanced</p>
                   <hr></hr>
                 </div>
               </div>
@@ -551,7 +552,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>Data Engineering</h6>
-                  <p>Experienced in data engineering (Intermediate).</p>
+                  <p>Intermediate</p>
                   <hr></hr>
                 </div>
               </div>
@@ -566,7 +567,17 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>System Analyst</h6>
-                  <p>Experienced in system analysis (Intermediate).</p>
+                  <p>Intermediate</p>
+                  <hr></hr>
+                </div>
+              </div>
+              <div className={custom.row}>
+                <div className="col-1 text-danger pt-1">
+                  <Image alt="AI" src="/icon/AI.png" width={30} height={30} />
+                </div>
+                <div className={`col-10 ${custom.mlauto} me-3`}>
+                  <h6>AI Engineering</h6>
+                  <p>Basic</p>
                   <hr></hr>
                 </div>
               </div>
@@ -789,7 +800,7 @@ export default function Home() {
                         <h6>Vue.js</h6>
                       </li>
                       <li>
-                        <h6>Angular.js</h6>
+                        <h6>Angular</h6>
                       </li>
                       <li>
                         <h6>Next.js</h6>
@@ -854,7 +865,7 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Operating System</b>
+                      <b>Operating Systems</b>
                     </h6>
                     <ul>
                       <li>
@@ -866,7 +877,7 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Message Brokering</b>
+                      <b>Message Brokers</b>
                     </h6>
                     <ul>
                       <li>
@@ -902,22 +913,22 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Cloud Computing</b>
+                      <b>Cloud Platforms</b>
                     </h6>
                     <ul>
+                      <li>
+                        <h6>GCP</h6>
+                      </li>
                       <li>
                         <h6>AWS</h6>
                       </li>
                       <li>
                         <h6>Azure</h6>
                       </li>
-                      <li>
-                        <h6>GCP</h6>
-                      </li>
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>DevOps</b>
+                      <b>DevOps & Containerization</b>
                     </h6>
                     <ul>
                       <li>
@@ -929,11 +940,23 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Automation Testing</b>
+                      <b>Testing & QA</b>
                     </h6>
                     <ul>
                       <li>
                         <h6>Selenium</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>ERP & E-commerce Platforms</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Odoo</h6>
+                      </li>
+                      <li>
+                        <h6>Shopify</h6>
                       </li>
                     </ul>
                   </div>

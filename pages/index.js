@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Select from "react-select";
 import { WorkExperience } from "../attributes/WorkExperience";
 import { Project } from "../attributes/Project";
 
@@ -14,7 +13,6 @@ export default function Home() {
   const [allWorkExperiences, setAllWorkExperiences] = useState(WorkExperience);
   const [workExperiences, setWorkExperiences] = useState([]);
   const [allProjects, setAllProjects] = useState(Project);
-  const [filterProjects, setFilterProjects] = useState([]);
   const [projects, setProjects] = useState([]);
   const [workExperiencePage, setWorkExperiencePage] = useState(1);
   const [lastWorkExperiencePage, setLastWorkExperiencePage] = useState(1);
@@ -24,69 +22,92 @@ export default function Home() {
   const projectPerPage = 6;
 
   useEffect(() => {
+    const getWorkExperiences = async () => {
+      await axios
+        .get(`${process.env.NEXT_PUBLIC_PROFILE_API}/work-experience`, {
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}`,
+          },
+        })
+        .then((response) => {
+          setAllWorkExperiences(response.data);
+          setLastWorkExperiencePage(
+            parseInt((response.data.length - 1) / workExperiencePerPage) + 1,
+          );
+          let workExperience = [];
+          for (
+            let i = 0;
+            i < min(workExperiencePerPage, response.data.length);
+            i++
+          ) {
+            workExperience.push(response.data[i]);
+          }
+          setWorkExperiences(workExperience);
+        })
+        .catch((e) => {
+          setLastWorkExperiencePage(
+            parseInt((allWorkExperiences.length - 1) / workExperiencePerPage) +
+              1,
+          );
+          let workExperience = [];
+          for (
+            let i = 0;
+            i < min(workExperiencePerPage, allWorkExperiences.length);
+            i++
+          ) {
+            workExperience.push(allWorkExperiences[i]);
+          }
+          setWorkExperiences(workExperience);
+        });
+    };
+
+    const getProjects = async () => {
+      await axios
+        .get(`${process.env.NEXT_PUBLIC_PROFILE_API}/project`, {
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}`,
+          },
+        })
+        .then((response) => {
+          setAllProjects(response.data);
+          setLastProjectPage(
+            parseInt((response.data.length - 1) / projectPerPage) + 1,
+          );
+          let project = [];
+          for (let i = 0; i < min(projectPerPage, response.data.length); i++) {
+            project.push(response.data[i]);
+          }
+          setProjects(project);
+        })
+        .catch((e) => {
+          setLastProjectPage(
+            parseInt((allProjects.length - 1) / projectPerPage) + 1,
+          );
+          let project = [];
+          for (let i = 0; i < min(projectPerPage, allProjects.length); i++) {
+            project.push(allProjects[i]);
+          }
+          setProjects(project);
+        });
+    };
+
     getWorkExperiences();
     getProjects();
-  }, []);
+  }, [allProjects, allWorkExperiences]);
 
   useEffect(() => {
-    updateWorkExperienceHTML();
-  }, [workExperiences]);
-
-  useEffect(() => {
-    updateProjectHTML();
-  }, [projects]);
-
-  const updateWorkExperienceHTML = async () => {
     for (let i = 0; i < workExperiences.length; i++) {
       document.getElementById(`work-experience_${i}`).innerHTML =
         workExperiences[i].description;
     }
-  };
+  }, [workExperiences]);
 
-  const updateProjectHTML = async () => {
+  useEffect(() => {
     for (let i = 0; i < projects.length; i++) {
       document.getElementById(`project_${i}`).innerHTML =
         projects[i].description;
     }
-  };
-
-  const getWorkExperiences = async () => {
-    await axios
-      .get(`${process.env.NEXT_PUBLIC_PROFILE_API}/work-experience`, {
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}`,
-        },
-      })
-      .then((response) => {
-        setAllWorkExperiences(response.data);
-        setLastWorkExperiencePage(
-          parseInt((response.data.length - 1) / workExperiencePerPage) + 1
-        );
-        let workExperience = [];
-        for (
-          let i = 0;
-          i < min(workExperiencePerPage, response.data.length);
-          i++
-        ) {
-          workExperience.push(response.data[i]);
-        }
-        setWorkExperiences(workExperience);
-      })
-      .catch((e) => {
-        setLastWorkExperiencePage(
-          parseInt((allWorkExperiences.length - 1) / workExperiencePerPage) + 1
-        );
-        let workExperience = [];
-        for (
-          let i = 0;
-          i < min(workExperiencePerPage, allWorkExperiences.length);
-          i++
-        ) {
-          workExperience.push(allWorkExperiences[i]);
-        }
-        setWorkExperiences(workExperience);
-      });
-  };
+  }, [projects]);
 
   const firstWorkExperienceClick = () => {
     if (workExperiencePage > 1) {
@@ -152,68 +173,6 @@ export default function Home() {
     }
   };
 
-  const getProjects = async () => {
-    await axios
-      .get(`${process.env.NEXT_PUBLIC_PROFILE_API}/project`, {
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}`,
-        },
-      })
-      .then((response) => {
-        setAllProjects(response.data);
-        setFilterProjects(response.data);
-        setLastProjectPage(
-          parseInt((response.data.length - 1) / projectPerPage) + 1
-        );
-        let project = [];
-        for (let i = 0; i < min(projectPerPage, response.data.length); i++) {
-          project.push(response.data[i]);
-        }
-        setProjects(project);
-      })
-      .catch((e) => {
-        setFilterProjects(allProjects);
-        setLastProjectPage(
-          parseInt((allProjects.length - 1) / projectPerPage) + 1
-        );
-        let project = [];
-        for (let i = 0; i < min(projectPerPage, allProjects.length); i++) {
-          project.push(allProjects[i]);
-        }
-        setProjects(project);
-      });
-  };
-
-  const filter = async (value) => {
-    setProjectPage(1);
-    let filterProject = [];
-    for (let i = 0; i < allProjects.length; i++) {
-      if (allProjects[i].description.indexOf(value) > -1) {
-        filterProject.push(allProjects[i]);
-      }
-    }
-    setFilterProjects(filterProject);
-    setLastProjectPage(
-      parseInt((filterProject.length - 1) / projectPerPage) + 1
-    );
-    let project = [];
-    for (let i = 0; i < min(projectPerPage, filterProject.length); i++) {
-      project.push(filterProject[i]);
-    }
-    setProjects(project);
-  };
-
-  const clear = async (e) => {
-    setProjectPage(1);
-    setFilterProjects([...allProjects]);
-    setLastProjectPage(parseInt((allProjects.length - 1) / projectPerPage) + 1);
-    let project = [];
-    for (let i = 0; i < min(projectPerPage, allProjects.length); i++) {
-      project.push(allProjects[i]);
-    }
-    setProjects(project);
-  };
-
   const firstProjectClick = () => {
     if (projectPage > 1) {
       setProjectPage(1);
@@ -221,10 +180,10 @@ export default function Home() {
       let project = [];
       for (
         let i = (last - 1) * projectPerPage;
-        i < min(filterProjects.length, last * projectPerPage);
+        i < min(allProjects.length, last * projectPerPage);
         i++
       ) {
-        project[project.length] = filterProjects[i];
+        project[project.length] = allProjects[i];
       }
       setProjects(project);
     }
@@ -237,10 +196,10 @@ export default function Home() {
       let project = [];
       for (
         let i = (next - 1) * projectPerPage;
-        i < min(filterProjects.length, next * projectPerPage);
+        i < min(allProjects.length, next * projectPerPage);
         i++
       ) {
-        project[project.length] = filterProjects[i];
+        project[project.length] = allProjects[i];
       }
       setProjects(project);
     }
@@ -253,10 +212,10 @@ export default function Home() {
       let project = [];
       for (
         let i = (next - 1) * projectPerPage;
-        i < min(filterProjects.length, next * projectPerPage);
+        i < min(allProjects.length, next * projectPerPage);
         i++
       ) {
-        project[project.length] = filterProjects[i];
+        project[project.length] = allProjects[i];
       }
       setProjects(project);
     }
@@ -269,10 +228,10 @@ export default function Home() {
       let project = [];
       for (
         let i = (last - 1) * projectPerPage;
-        i < min(filterProjects.length, last * projectPerPage);
+        i < min(allProjects.length, last * projectPerPage);
         i++
       ) {
-        project[project.length] = filterProjects[i];
+        project[project.length] = allProjects[i];
       }
       setProjects(project);
     }
@@ -391,17 +350,6 @@ export default function Home() {
                 System Analyst | Associate Cloud Engineer (ACE) | <br></br>
                 AI Engineer
               </h6>
-              <a
-                rel="noreferrer"
-                href="https://drive.google.com/uc?id=1BkvKYajuPMLdrXx45QSb7yoSxlDfLkgh&export=download"
-                target="_blank"
-              >
-                <button
-                  className={`${custom.btn} ${custom.btnprimary} btn-rounded`}
-                >
-                  <i className="pr-2"></i>Download CV
-                </button>
-              </a>
             </div>
           </div>
         </header>
@@ -414,27 +362,21 @@ export default function Home() {
               </h3>
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
-                <b>Bachelor of Computer Science</b> graduate from{" "}
-                <b>Bandung Institute of Technology</b>, who is a highly skilled
-                and versatile professional with expertise in Software
-                Engineering, Data Engineering, System Analysis, and Cloud
-                Engineering for <b>3+ years of experience</b>. Adept at
-                designing and developing innovative solutions to complex
-                technical challenges. Proven ability to lead and collaborate
-                with cross-functional teams, ensuring successful project
-                delivery. Curious, adaptable, and continuously seeking
-                opportunities to provide secure and efficient solutions that
-                elevate organizational performance.
+                <b>
+                  Master’s student in Computer Science at Universitas Indonesia
+                  and Bachelor of Computer Science graduate from Bandung
+                  Institute of Technology
+                </b>
+                , with <b>4+ years of experience</b> in Software Engineering,
+                Data Engineering, System Analysis, Cloud Engineering, and AI
+                Engineering. Specialized in building scalable systems,
+                data-driven architectures, and AI-powered solutions to solve
+                complex technical and business problems. Proven ability to lead
+                and collaborate across cross-functional teams, delivering
+                secure, efficient, and production-ready systems. Analytical,
+                adaptable, and continuously exploring emerging technologies to
+                drive innovation and organizational impact.
               </p>
-              <a
-                rel="noreferrer"
-                href="https://drive.google.com/uc?id=1BkvKYajuPMLdrXx45QSb7yoSxlDfLkgh&export=download"
-                target="_blank"
-              >
-                <button className="btn btn-outline-danger">
-                  <i className="icon-down-circled2 "></i>Download My CV
-                </button>
-              </a>
             </div>
             <div className={`col-lg-4 ${custom.aboutcard}`}>
               <h3 className={`${custom.fontweightlight}`}>Personal Info</h3>
@@ -552,7 +494,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>Data Engineering</h6>
-                  <p>Intermediate</p>
+                  <p>Advanced</p>
                   <hr></hr>
                 </div>
               </div>
@@ -577,7 +519,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>AI Engineering</h6>
-                  <p>Basic</p>
+                  <p>Intermediate</p>
                   <hr></hr>
                 </div>
               </div>
@@ -683,6 +625,20 @@ export default function Home() {
                     </div>
                   </div>
                   <div className={custom.cardbody}>
+                    <h6 className="title text-danger">Aug 2025 - Present</h6>
+                    <p>
+                      <b>University of Indonesia</b>
+                    </p>
+                    <p className="subtitle">
+                      Master of Computer Science, Computer Science
+                      <br />
+                      3.75/4.00 (On Going)
+                      <br />
+                      <br />
+                      <b>Specialization:</b> Artificial Intelligence & Data
+                      Science
+                    </p>
+                    <hr></hr>
                     <h6 className="title text-danger">Aug 2020 - Sep 2024</h6>
                     <p>
                       <b>Bandung Institute of Technology</b>
@@ -693,8 +649,20 @@ export default function Home() {
                       3.63/4.00 (Cum Laude)
                       <br />
                       <br />
-                      <b>Thesis:</b> Application Development with LLM for
-                      Generation and Visualization of BPMN from Legal Documents
+                      <b>Thesis:</b> Generation and Visualization of BPMN from
+                      Legal Documents
+                      <br />
+                      <b>Published in:</b> Generation and Visualization of BPMN
+                      from Legal Documents
+                      <br />
+                      <b>Link:</b>{" "}
+                      <a
+                        href="https://ieeexplore.ieee.org/document/11351687"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        https://ieeexplore.ieee.org/document/11351687
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -706,24 +674,6 @@ export default function Home() {
                     </div>
                   </div>
                   <div className={custom.cardbody}>
-                    <h6>
-                      <b>Cisco</b>
-                    </h6>
-                    <ul>
-                      <li>
-                        <h6>CyberOps Associate (May 2024)</h6>
-                      </li>
-                      <li>
-                        <h6>Cyber Threat Management (Apr 2024)</h6>
-                      </li>
-                      <li>
-                        <h6>Endpoint Security (Apr 2024)</h6>
-                      </li>
-                      <li>
-                        <h6>Network Defense (Apr 2024)</h6>
-                      </li>
-                    </ul>
-                    <hr></hr>
                     <h6>
                       <b>Google Cloud</b>
                     </h6>
@@ -742,6 +692,24 @@ export default function Home() {
                       </li>
                       <li>
                         <h6>Google Cybersecurity (Aug 2023)</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Cisco</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>CyberOps Associate (May 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Cyber Threat Management (Apr 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Endpoint Security (Apr 2024)</h6>
+                      </li>
+                      <li>
+                        <h6>Network Defense (Apr 2024)</h6>
                       </li>
                     </ul>
                     <hr></hr>
@@ -805,14 +773,29 @@ export default function Home() {
                       <li>
                         <h6>Next.js</h6>
                       </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Mobile & Cross-Platform</b>
+                    </h6>
+                    <ul>
                       <li>
-                        <h6>React Native</h6>
+                        <h6>Flutter</h6>
                       </li>
                       <li>
                         <h6>Android Studio</h6>
                       </li>
                       <li>
-                        <h6>Unity</h6>
+                        <h6>React Native</h6>
+                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Game Development</b>
+                    </h6>
+                    <ul>
+                      <li>
+                        <h6>Unity (C#)</h6>
                       </li>
                     </ul>
                     <hr></hr>
@@ -821,7 +804,7 @@ export default function Home() {
                     </h6>
                     <ul>
                       <li>
-                        <h6>Node.js (Express.js, Nest.js, Hapi.js, Fastify)</h6>
+                        <h6>Node.js (ExpressJS, NestJS)</h6>
                       </li>
                       <li>
                         <h6>Python (Flask, Django)</h6>
@@ -830,14 +813,23 @@ export default function Home() {
                         <h6>Go (Gin, Echo)</h6>
                       </li>
                       <li>
+                        <h6>Ruby (Rails)</h6>
+                      </li>
+                      <li>
+                        <h6>Java (Spring Boot)</h6>
+                      </li>
+                      <li>
                         <h6>PHP (Laravel, CodeIgniter)</h6>
                       </li>
                       <li>
                         <h6>C# (.NET)</h6>
                       </li>
-                      <li>
-                        <h6>Java (Spring Boot)</h6>
-                      </li>
+                    </ul>
+                    <hr></hr>
+                    <h6>
+                      <b>Additional Languages</b>
+                    </h6>
+                    <ul>
                       <li>
                         <h6>Rust</h6>
                       </li>
@@ -865,7 +857,7 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Operating Systems</b>
+                      <b>Operating Systems & Environment</b>
                     </h6>
                     <ul>
                       <li>
@@ -874,10 +866,13 @@ export default function Home() {
                       <li>
                         <h6>Windows</h6>
                       </li>
+                      <li>
+                        <h6>MacOS</h6>
+                      </li>
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Message Brokers</b>
+                      <b>Message Brokers & Streaming</b>
                     </h6>
                     <ul>
                       <li>
@@ -892,7 +887,7 @@ export default function Home() {
                     </ul>
                     <hr></hr>
                     <h6>
-                      <b>Distributed Computing</b>
+                      <b>Distributed & Data Processing</b>
                     </h6>
                     <ul>
                       <li>
@@ -971,17 +966,6 @@ export default function Home() {
             <h2 className="mb-5 pb-4">
               <span className="text-danger">My</span> Latest Projects
             </h2>
-            <div className="d-flex flex-row mb-4">
-              <Select
-                options={filterOptions}
-                className="col-md-3"
-                placeholder="Filter by"
-                onChange={(e) => filter(e.value)}
-              />
-              <button className="btn btn-danger ms-3" onClick={(e) => clear(e)}>
-                Clear
-              </button>
-            </div>
             <div className="row">
               {projects.map((project, key) => {
                 return (

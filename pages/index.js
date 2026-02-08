@@ -8,18 +8,25 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { WorkExperience } from "../attributes/WorkExperience";
 import { Project } from "../attributes/Project";
+import { AcademicProject } from "../attributes/AcademicProject";
 
 export default function Home() {
   const [allWorkExperiences, setAllWorkExperiences] = useState(WorkExperience);
   const [workExperiences, setWorkExperiences] = useState([]);
   const [allProjects, setAllProjects] = useState(Project);
   const [projects, setProjects] = useState([]);
+  const [allAcademicProjects, setAllAcademicProjects] =
+    useState(AcademicProject);
+  const [academicProjects, setAcademicProjects] = useState([]);
   const [workExperiencePage, setWorkExperiencePage] = useState(1);
   const [lastWorkExperiencePage, setLastWorkExperiencePage] = useState(1);
   const [projectPage, setProjectPage] = useState(1);
   const [lastProjectPage, setLastProjectPage] = useState(1);
+  const [academicProjectPage, setAcademicProjectPage] = useState(1);
+  const [lastAcademicProjectPage, setLastAcademicProjectPage] = useState(1);
   const workExperiencePerPage = 2;
-  const projectPerPage = 6;
+  const projectPerPage = 3;
+  const academicProjectPerPage = 3;
 
   useEffect(() => {
     const getWorkExperiences = async () => {
@@ -91,9 +98,50 @@ export default function Home() {
         });
     };
 
+    const getAcademicProjects = async () => {
+      await axios
+        .get(`${process.env.NEXT_PUBLIC_PROFILE_API}/academic-project`, {
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_KEY}`,
+          },
+        })
+        .then((response) => {
+          setAllAcademicProjects(response.data);
+          setLastAcademicProjectPage(
+            parseInt((response.data.length - 1) / academicProjectPerPage) + 1,
+          );
+          let project = [];
+          for (
+            let i = 0;
+            i < min(academicProjectPerPage, response.data.length);
+            i++
+          ) {
+            project.push(response.data[i]);
+          }
+          setAcademicProjects(project);
+        })
+        .catch((e) => {
+          setLastAcademicProjectPage(
+            parseInt(
+              (allAcademicProjects.length - 1) / academicProjectPerPage,
+            ) + 1,
+          );
+          let project = [];
+          for (
+            let i = 0;
+            i < min(academicProjectPerPage, allAcademicProjects.length);
+            i++
+          ) {
+            project.push(allAcademicProjects[i]);
+          }
+          setAcademicProjects(project);
+        });
+    };
+
     getWorkExperiences();
     getProjects();
-  }, [allProjects, allWorkExperiences]);
+    getAcademicProjects();
+  }, [allProjects, allWorkExperiences, allAcademicProjects]);
 
   useEffect(() => {
     for (let i = 0; i < workExperiences.length; i++) {
@@ -108,6 +156,13 @@ export default function Home() {
         projects[i].description;
     }
   }, [projects]);
+
+  useEffect(() => {
+    for (let i = 0; i < academicProjects.length; i++) {
+      document.getElementById(`academic-project_${i}`).innerHTML =
+        academicProjects[i].description;
+    }
+  }, [academicProjects]);
 
   const firstWorkExperienceClick = () => {
     if (workExperiencePage > 1) {
@@ -237,6 +292,70 @@ export default function Home() {
     }
   };
 
+  const firstAcademicProjectClick = () => {
+    if (academicProjectPage > 1) {
+      setAcademicProjectPage(1);
+      const last = 1;
+      let project = [];
+      for (
+        let i = (last - 1) * academicProjectPerPage;
+        i < min(allAcademicProjects.length, last * academicProjectPerPage);
+        i++
+      ) {
+        project[project.length] = allAcademicProjects[i];
+      }
+      setAcademicProjects(project);
+    }
+  };
+
+  const prevAcademicProjectClick = () => {
+    if (academicProjectPage > 1) {
+      setAcademicProjectPage(academicProjectPage - 1);
+      const next = academicProjectPage - 1;
+      let project = [];
+      for (
+        let i = (next - 1) * academicProjectPerPage;
+        i < min(allAcademicProjects.length, next * academicProjectPerPage);
+        i++
+      ) {
+        project[project.length] = allAcademicProjects[i];
+      }
+      setAcademicProjects(project);
+    }
+  };
+
+  const nextAcademicProjectClick = () => {
+    if (academicProjectPage < lastAcademicProjectPage) {
+      setAcademicProjectPage(academicProjectPage + 1);
+      const next = academicProjectPage + 1;
+      let project = [];
+      for (
+        let i = (next - 1) * academicProjectPerPage;
+        i < min(allAcademicProjects.length, next * academicProjectPerPage);
+        i++
+      ) {
+        project[project.length] = allAcademicProjects[i];
+      }
+      setAcademicProjects(project);
+    }
+  };
+
+  const lastAcademicProjectClick = () => {
+    if (academicProjectPage < lastAcademicProjectPage) {
+      setAcademicProjectPage(lastAcademicProjectPage);
+      const last = lastAcademicProjectPage;
+      let project = [];
+      for (
+        let i = (last - 1) * academicProjectPerPage;
+        i < min(allAcademicProjects.length, last * academicProjectPerPage);
+        i++
+      ) {
+        project[project.length] = allAcademicProjects[i];
+      }
+      setAcademicProjects(project);
+    }
+  };
+
   const min = (a, b) => {
     if (a < b) {
       return a;
@@ -244,26 +363,6 @@ export default function Home() {
       return b;
     }
   };
-
-  const filterOptions = [
-    { value: "React.js", label: "React.js" },
-    { value: "Vue.js", label: "Vue.js" },
-    { value: "Next.js", label: "Next.js" },
-    { value: "React Native", label: "React Native" },
-    { value: "Android Studio", label: "Android Studio" },
-    { value: "Unity", label: "Unity" },
-    { value: "Express.js", label: "Express.js" },
-    { value: "Nest.js", label: "Nest.js" },
-    { value: "Flask", label: "Flask" },
-    { value: "Go", label: "Go" },
-    { value: "Laravel", label: "Laravel" },
-    { value: "CodeIgniter", label: "CodeIgniter" },
-    { value: ".NET", label: ".NET" },
-    { value: "Spring Boot", label: "Spring Boot" },
-    { value: "JAX-WS", label: "JAX-WS" },
-    { value: "JavaFX", label: "JavaFX" },
-    { value: "Swing", label: "Swing" },
-  ];
 
   return (
     <div>
@@ -466,7 +565,7 @@ export default function Home() {
               </ul>
             </div>
             <div className={`col-lg-4 ${custom.aboutcard}`}>
-              <h3 className={`${custom.fontweightlight}`}>My Expertise</h3>
+              <h3 className={`${custom.fontweightlight}`}>Expertise</h3>
               <span className={`${custom.line} mb-5`}></span>
               <div className={custom.row}>
                 <div className="col-1 text-danger pt-1">
@@ -479,7 +578,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>Software Development</h6>
-                  <p>Advanced</p>
+                  <p>Advanced (4+ years)</p>
                   <hr></hr>
                 </div>
               </div>
@@ -494,7 +593,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>Data Engineering</h6>
-                  <p>Advanced</p>
+                  <p>Advanced (4+ years)</p>
                   <hr></hr>
                 </div>
               </div>
@@ -509,7 +608,22 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>System Analyst</h6>
-                  <p>Intermediate</p>
+                  <p>Intermediate (2+ years)</p>
+                  <hr></hr>
+                </div>
+              </div>
+              <div className={custom.row}>
+                <div className="col-1 text-danger pt-1">
+                  <Image
+                    alt="Cloud"
+                    src="/icon/Cloud.png"
+                    width={30}
+                    height={30}
+                  />
+                </div>
+                <div className={`col-10 ${custom.mlauto} me-3`}>
+                  <h6>Cloud Computing</h6>
+                  <p>Intermediate (2+ years)</p>
                   <hr></hr>
                 </div>
               </div>
@@ -519,7 +633,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>AI Engineering</h6>
-                  <p>Intermediate</p>
+                  <p>Intermediate (2+ years)</p>
                   <hr></hr>
                 </div>
               </div>
@@ -530,7 +644,7 @@ export default function Home() {
         <section className={custom.section} id="resume">
           <div className="container">
             <h2 className="mb-5">
-              <span className="text-danger">My</span> Resume
+              <span className="text-danger">Resume</span>
             </h2>
             <div className="row">
               <div className="col-md-6 col-lg-4">
@@ -963,8 +1077,8 @@ export default function Home() {
 
         <section className={custom.section} id="service">
           <div className="container">
-            <h2 className="mb-5 pb-4">
-              <span className="text-danger">My</span> Latest Projects
+            <h2 className="mb-4 pb-4">
+              <span className="text-danger">Recent</span> Professional Projects
             </h2>
             <div className="row">
               {projects.map((project, key) => {
@@ -1047,10 +1161,106 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className={custom.section} id="service">
+          <div className="container">
+            <h2 className="mb-4 pb-4">
+              <span className="text-danger">Recent</span> Academic Projects
+            </h2>
+            <div className="row">
+              {academicProjects.map((project, key) => {
+                return (
+                  <div key={key} className="col-md-4 col-sm-6">
+                    <div className={`${custom.card} mb-5`}>
+                      <div className={`${custom.cardheader} ${custom.hasicon}`}>
+                        <Image
+                          alt="Project"
+                          src="/icon/Project.png"
+                          width={30}
+                          height={30}
+                        />
+                      </div>
+                      <div className={`${custom.cardbody} px-4 py-3`}>
+                        <a
+                          rel="noreferrer"
+                          href={project.link}
+                          target="_blank"
+                          className={custom.notunderline}
+                        >
+                          <Image
+                            alt="ProjectImage"
+                            src={project.image_path}
+                            width="100%"
+                            height="100%"
+                            layout="responsive"
+                            objectFit="contain"
+                          />
+                        </a>
+                        <h5
+                          className={`mb-3 ${custom.cardtitle} text-dark mt-1`}
+                        >
+                          {project.title}
+                        </h5>
+                        <div id={`academic-project_${key}`}>
+                          {project.description}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className={`text-center ${custom.seemore}`}>
+              <span className="mx-2" onClick={() => prevAcademicProjectClick()}>
+                {" < "}
+              </span>
+              {academicProjectPage > 1 && (
+                <span
+                  className="mx-2"
+                  onClick={() => firstAcademicProjectClick()}
+                >
+                  {" 1 "}
+                </span>
+              )}
+              {academicProjectPage - 2 > 1 && (
+                <span className="mx-2">{" .. "}</span>
+              )}
+              {academicProjectPage - 1 > 1 && (
+                <span
+                  className="mx-2"
+                  onClick={() => prevAcademicProjectClick()}
+                >{` ${academicProjectPage - 1} `}</span>
+              )}
+
+              <span className="mx-2">
+                <strong>{` ${academicProjectPage} `}</strong>
+              </span>
+
+              {academicProjectPage + 1 < lastAcademicProjectPage && (
+                <span
+                  className="mx-2"
+                  onClick={() => nextAcademicProjectClick()}
+                >{` ${academicProjectPage + 1} `}</span>
+              )}
+              {academicProjectPage + 2 < lastAcademicProjectPage && (
+                <span className="mx-2">{" .. "}</span>
+              )}
+              {academicProjectPage < lastAcademicProjectPage && (
+                <span
+                  className="mx-2"
+                  onClick={() => lastAcademicProjectClick()}
+                >{` ${lastAcademicProjectPage} `}</span>
+              )}
+              <span className="mx-2" onClick={() => nextAcademicProjectClick()}>
+                {" > "}
+              </span>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className={styles.footer}>
-        <p>©2022 Willy Wilsen</p>
+        <p>©2026 Willy Wilsen</p>
       </footer>
     </div>
   );

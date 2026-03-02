@@ -9,7 +9,7 @@ export const Project = [
 `,
     image_path: "/projects/Liars_Dice.png",
     link: "https://liarsdice.fun",
-    sequence: { $numberInt: "10" },
+    sequence: { $numberInt: "11" },
   },
   {
     _id: { $oid: "65c8812ccf2413607c6d30ae" },
@@ -21,6 +21,18 @@ export const Project = [
 `,
     image_path: "/projects/Skorku.jpg",
     link: "https://play.google.com/store/apps/details?id=com.kbij.skorku&hl=id",
+    sequence: { $numberInt: "10" },
+  },
+  {
+    _id: { $oid: "65c8812ccf2413607c6d30b0" },
+    title: "ICONNET",
+    description: `<li>ICONNET is a web-based platform built with <b>Vue.js</b> for the frontend and <b>Spring Boot</b> for the backend, using <b>SQL Server</b> as the primary database and integrated with <b>MinIO</b> for object storage management.</li>
+<li>Developed the backend services and building a custom CMS (Content Management System) to manage products and website content dynamically.</li>
+<li>Users can browse available internet products based on their location, including pricing details and service specifications.</li>
+<li>The platform also provides information about available add-on services tailored to specific locations.</li>
+`,
+    image_path: "/projects/ICONNET.png",
+    link: "https://iconnet.id",
     sequence: { $numberInt: "9" },
   },
   {

@@ -4,7 +4,7 @@ export const Project = [
     title: "Liars Dice Game",
     description: `<li>Liars Dice Game is a web-based game built with <b>React + Vite</b> for the frontend and <b>Nest.js</b> for the backend, using <b>PostgreSQL</b> as the database and <b>WebSocket</b> for real-time communication.</li>
 <li>Developed the entire frontend, including interactive UI components and game animations to enhance the player experience.</li>
-<li>The game supports both <b>versus AI</b> and <b>versus player</b> modes, allowing users to compete against the system or other players in real time.</li>
+<li>The game supports both versus AI and versus player modes, allowing users to compete against the system or other players in real time.</li>
 <li>Core game rules and mechanics of Liar’s Dice are fully implemented to ensure fair and structured gameplay.</li>
 `,
     image_path: "/projects/Liars_Dice.png",
@@ -27,7 +27,7 @@ export const Project = [
     _id: { $oid: "65c8812ccf2413607c6d30ad" },
     title: "Eduqat Dashboard",
     description: `<li>Eduqat Dashboard is a web-based platform built with <b>React.js</b> (frontend), <b>Express.js</b> (backend), and <b>PostgreSQL</b> (database), leveraging <b>AWS Lambda</b> for scalable serverless processing.</li>
-<li>The system provides an intelligent self-assessment feature integrated with <b>AI</b> to generate automated and personalized reviews for students.</li>
+<li>The system provides an intelligent self-assessment feature integrated with AI to generate automated and personalized reviews for students.</li>
 <li>Developed a membership feature that allows students to purchase bundled access to multiple courses within a single membership package.</li>
 `,
     image_path: "/projects/Eduqat_Dashboard.png",

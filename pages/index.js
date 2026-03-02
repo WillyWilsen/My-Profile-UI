@@ -462,9 +462,9 @@ export default function Home() {
               <span className={`${custom.line} mb-5`}></span>
               <p className="mt-20">
                 <b>
-                  Master’s student in Computer Science at Universitas Indonesia
-                  and Bachelor of Computer Science graduate from Bandung
-                  Institute of Technology
+                  Master’s student in Computer Science at University of
+                  Indonesia and Bachelor of Computer Science graduate from
+                  Bandung Institute of Technology
                 </b>
                 , with <b>4+ years of experience</b> in Software Engineering,
                 Data Engineering, System Analysis, Cloud Engineering, and AI
@@ -608,7 +608,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>System Analyst</h6>
-                  <p>Intermediate (2+ years)</p>
+                  <p>Intermediate (4+ years)</p>
                   <hr></hr>
                 </div>
               </div>
@@ -623,7 +623,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>Cloud Computing</h6>
-                  <p>Intermediate (2+ years)</p>
+                  <p>Intermediate (3+ years)</p>
                   <hr></hr>
                 </div>
               </div>
@@ -633,7 +633,7 @@ export default function Home() {
                 </div>
                 <div className={`col-10 ${custom.mlauto} me-3`}>
                   <h6>AI Engineering</h6>
-                  <p>Intermediate (2+ years)</p>
+                  <p>Intermediate (3+ years)</p>
                   <hr></hr>
                 </div>
               </div>

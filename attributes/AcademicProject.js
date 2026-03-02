@@ -1,7 +1,7 @@
 export const AcademicProject = [
   {
     _id: { $oid: "6516665f1e0f235bb960690d" },
-    title: "BEAST App",
+    title: "BEAST",
     description: `<li>BEAST is a training management application for members, admins, and coaches of the Bandung Tennis Enthusiast organization.</li>
 <li>The app is built using <b>React Native</b>, <b>Express.js</b>, and <b>PostgreSQL</b>.</li>
 <li>Members can register for training sessions and complete training payments.</li>
@@ -54,8 +54,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "639ef6ae296bbe6bd7b76101" },
-    title: "Binotify Website V2",
-    description: `<li><b>Binotify Website</b> is built using <b>CodeIgniter</b> and <b>MySQL</b>, allowing users to browse music and subscribe to singers through the Binotify Premium integration.</li>
+    title: "Binotify V2",
+    description: `<li><b>Binotify</b> is built using <b>CodeIgniter</b> and <b>MySQL</b>, allowing users to browse music and subscribe to singers through the Binotify Premium integration.</li>
 <li><b>Binotify Premium Website</b> is developed using <b>React.js + Vite</b>, where admins manage subscription approvals and singers manage their song data.</li>
 <li><b>Binotify REST Service</b> is created using <b>Nest.js</b> and <b>MySQL</b>, providing authentication and APIs for managing singer and song data.</li>
 <li><b>Binotify SOAP Service</b> is implemented using <b>JAX-WS</b> and <b>MySQL</b>, handling security, subscription request processing, callbacks, and request status checking.</li>
@@ -66,8 +66,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "639e3291296bbe6bd7b760bc" },
-    title: "Binotify Website",
-    description: `<li>Binotify website is built using <b>CodeIgniter</b> (with modified configurations) and <b>MySQL</b>.</li>
+    title: "Binotify",
+    description: `<li>Binotify is built using <b>CodeIgniter</b> (with modified configurations) and <b>MySQL</b>.</li>
 <li>The platform provides music streaming features with albums and songs.</li>
 <li>Users can browse albums, view song details, search songs, and listen to music.</li>
 <li>Admins have full user capabilities plus management features such as adding or deleting albums and songs, and viewing registered users.</li>
@@ -78,8 +78,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "631a1568a2b7ef0b2f82a1a5" },
-    title: "BNMO Website",
-    description: `<li>BNMO website is built using <b>React.js</b> with CI/CD, <b>Spring Boot</b> with Docker and CI/CD, and <b>PostgreSQL</b>, and is deployed on <b>Heroku</b>.</li>
+    title: "BNMO",
+    description: `<li>BNMO is built using <b>React.js</b> with CI/CD, <b>Spring Boot</b> with Docker and CI/CD, and <b>PostgreSQL</b>, and is deployed on <b>Heroku</b>.</li>
 <li>The system implements Authorization Bearer Token, API Caching, and API Documentation using Swagger.</li>
 <li>The platform supports two roles: admin and customer.</li>
 <li>Customers can register, request balance top-ups, manage profiles, transfer balances, and view request and transaction histories.</li>
@@ -91,8 +91,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "631a14f8a2b7ef0b2f82a1a1" },
-    title: "MST-Based Clustering Website",
-    description: `<li>MST-Based Clustering website is built using <b>React.js (TypeScript)</b>, <b>Go</b>, <b>Docker</b>, <b>CI/CD</b>, and <b>MySQL</b>.</li>
+    title: "MST-Based Clustering",
+    description: `<li>MST-Based Clustering is built using <b>React.js (TypeScript)</b>, <b>Go</b>, <b>Docker</b>, <b>CI/CD</b>, and <b>MySQL</b>.</li>
 <li>The system implements an unsupervised machine learning clustering approach based on Minimum Spanning Tree (MST).</li>
 <li>A MST is constructed from n data points, and clusters are formed by cutting the highest-weight edges.</li>
 <li>The number of edges removed determines the number of clusters, with a maximum of n−1 possible cuts.</li>
@@ -103,8 +103,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "631a1483a2b7ef0b2f82a19f" },
-    title: "Buzzer Checker Website",
-    description: `<li>Buzzer Checker website is built using <b>Vue.js</b> and <b>Flask</b>.</li>
+    title: "Buzzer Checker",
+    description: `<li>Buzzer Checker is built using <b>Vue.js</b> and <b>Flask</b>.</li>
 <li>The system analyzes a Twitter username to determine whether it is a buzzer account.</li>
 <li>Detection is performed by converting account data into a three-dimensional vector and comparing it with known buzzer account vectors.</li>
 `,
@@ -114,8 +114,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "631a142ea2b7ef0b2f82a19d" },
-    title: "NIM Finder Website",
-    description: `<li>NIM Finder website is built using <b>React.js</b> with Progressive Web App (PWA) technology.</li>
+    title: "NIM Finder",
+    description: `<li>NIM Finder is built using <b>React.js</b> with Progressive Web App (PWA) technology.</li>
 <li>The system helps users search for Bandung Institute of Technology student identities.</li>
 <li>Search can be performed using student ID number, department/major, year of class, or name.</li>
 `,
@@ -125,8 +125,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "631a13e2a2b7ef0b2f82a19a" },
-    title: "DNA Website",
-    description: `<li>DNA website is built using <b>React.js</b>, <b>Go</b>, and <b>MySQL</b>.</li>
+    title: "DNA",
+    description: `<li>DNA is built using <b>React.js</b>, <b>Go</b>, and <b>MySQL</b>.</li>
 <li>Users can add new disease data to the database.</li>
 <li>The system predicts diseases by analyzing patient DNA and provides percentage match results.</li>
 <li>Users can search and review disease prediction history.</li>
@@ -138,7 +138,7 @@ export const AcademicProject = [
   {
     _id: { $oid: "6409acd6978163a29376acf8" },
     title: "Aether Wars Game (Desktop)",
-    description: `<li>Aether Wars application is developed using <b>JavaFX</b>.</li>
+    description: `<li>Aether Wars is developed using <b>JavaFX</b>.</li>
 <li>The game is designed for 2 players, each holding up to 5 cards.</li>
 <li>Gameplay consists of four phases: Draw, Plan, Attack, and End.</li>
 <li>Players draw new cards, plan strategies by placing or discarding cards, and take turns attacking opponents.</li>
@@ -150,7 +150,7 @@ export const AcademicProject = [
   {
     _id: { $oid: "6409ae19978163a29376acfd" },
     title: "15-Puzzle (Desktop)",
-    description: `<li>15-Puzzle application is developed using <b>Java Swing</b>.</li>
+    description: `<li>15-Puzzle is developed using <b>Java Swing</b>.</li>
 <li>The program solves the puzzle using the Branch and Bound algorithm.</li>
 <li>It reads the initial puzzle configuration from a file and processes it until a solution is found.</li>
 <li>The application supports both CLI and GUI interfaces.</li>
@@ -162,7 +162,7 @@ export const AcademicProject = [
   {
     _id: { $oid: "6409aebd978163a29376ad00" },
     title: "Folder Crawling (Desktop)",
-    description: `<li>Folder Crawling application is developed using <b>C#</b> with the <b>.NET</b> framework.</li>
+    description: `<li>Folder Crawling is developed using <b>C#</b> with the <b>.NET</b> framework.</li>
 <li>The system replicates file explorer functionality, enabling users to navigate directories.</li>
 <li>It uses Breadth First Search (BFS) and Depth First Search (DFS) algorithms to locate target folders.</li>
 <li>Search results are visualized in a tree structure.</li>
@@ -173,8 +173,8 @@ export const AcademicProject = [
   },
   {
     _id: { $oid: "631a0caea2b7ef0b2f82a190" },
-    title: "Image Compressor Website",
-    description: `<li>Image Compressor website is built using <b>Flask</b>.</li>
+    title: "Image Compressor",
+    description: `<li>Image Compressor is built using <b>Flask</b>.</li>
 <li>The system allows users to compress selected images based on a chosen compression percentage.</li>
 `,
     image_path: "/projects/Image_Compressor.png",

@@ -485,7 +485,7 @@ export default function Home() {
                   <span>Github</span> : WillyWilsen
                 </li>
                 <li>
-                  <span>Email</span> : willywilsen@gmail.com
+                  <span>Email</span> : willywilsen.ww@gmail.com
                 </li>
                 <li>
                   <span>LinkedIn</span> : Willy Wilsen{" "}

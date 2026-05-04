@@ -25,7 +25,7 @@ export default function Home() {
   const [academicProjectPage, setAcademicProjectPage] = useState(1);
   const [lastAcademicProjectPage, setLastAcademicProjectPage] = useState(1);
   const workExperiencePerPage = 2;
-  const projectPerPage = 3;
+  const projectPerPage = 6;
   const academicProjectPerPage = 3;
 
   useEffect(() => {
@@ -140,7 +140,7 @@ export default function Home() {
 
     getWorkExperiences();
     getProjects();
-    getAcademicProjects();
+    // getAcademicProjects();
   }, [allProjects, allWorkExperiences, allAcademicProjects]);
 
   useEffect(() => {
@@ -1162,7 +1162,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={custom.section} id="service">
+        {/* <section className={custom.section} id="service">
           <div className="container">
             <h2 className="mb-4 pb-4">
               <span className="text-danger">Recent</span> Academic Projects
@@ -1256,7 +1256,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <footer className={styles.footer}>

@@ -2,7 +2,7 @@ export const WorkExperience = [
   {
     _id: { $oid: "647b19f827b072d12d76ac12" },
     from: "Sep 2024",
-    to: "Dec 2025",
+    to: "Mar 2026",
     job_position: "Back End Developer",
     job_type: "Freelance",
     company: "Suitmedia Digital Agency",
@@ -12,6 +12,24 @@ export const WorkExperience = [
 4. Adjusted and enhanced APIs based on team discussions to match frontend requirements and design specifications.<br>
 5. Created technical documentation for APIs and file system integration as part of the development phase deliverables.<br>
 <b>Skills:</b> Spring Boot · Microsoft SQL Server · NestJS · PostgreSQL`,
+    sequence: { $numberInt: "5" },
+  },
+
+  {
+    _id: { $oid: "647b19f827b072d12d76ac12" },
+    from: "Nov 2024",
+    to: "Nov 2025",
+    job_position: "AI Software Engineer",
+    job_type: "Part-time",
+    company: "CloudRev",
+    description: `1. Developed and customized Odoo modules to support specific business workflows and improve operational efficiency.<br>
+2. Built analytical dashboards by integrating backend systems with Voiceflow transcript data, enabling deeper insights into user conversations.<br>
+3. Integrated Shopify APIs with chatbot systems to analyze customer history and generate actionable insights for business decision-making.<br>
+4. Designed and developed a company profile website, focusing on performance and modern UI/UX.<br>
+5. Implemented real-time 3D model interactions using LiveKit, including lip-sync animation to enhance conversational experiences.<br>
+6. Developed comprehensive unit tests for Voiceflow and chatbot-related server components to ensure reliability, stability, and maintainability of 
+backend services.<br>
+<b>Skills:</b> Odoo · Express.js · Astro · Shopify · Unity · Unit Testing`,
     sequence: { $numberInt: "5" },
   },
   {

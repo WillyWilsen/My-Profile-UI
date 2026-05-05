@@ -24,12 +24,14 @@ export const WorkExperience = [
     company: "CloudRev",
     description: `1. Developed and customized Odoo modules to support specific business workflows and improve operational efficiency.<br>
 2. Built analytical dashboards by integrating backend systems with Voiceflow transcript data, enabling deeper insights into user conversations.<br>
-3. Integrated Shopify APIs with chatbot systems to analyze customer history and generate actionable insights for business decision-making.<br>
-4. Designed and developed a company profile website, focusing on performance and modern UI/UX.<br>
-5. Implemented real-time 3D model interactions using LiveKit, including lip-sync animation to enhance conversational experiences.<br>
-6. Developed comprehensive unit tests for Voiceflow and chatbot-related server components to ensure reliability, stability, and maintainability of 
+3. Implemented vector search to store and retrieve Shopify attribute embeddings, enabling similarity-based key matching for dynamic data extraction.<br>
+4. Designed and implemented an AI pipeline to generate structured prompts, transforming extracted attribute keys into GraphQL JSON payloads for dynamic data querying.<br>
+5. Integrated Shopify APIs with chatbot systems to analyze customer history and generate actionable insights for business decision-making.<br>
+6. Designed and developed a company profile website, focusing on performance and modern UI/UX.<br>
+7. Implemented real-time 3D model interactions using LiveKit, including lip-sync animation to enhance conversational experiences.<br>
+8. Developed comprehensive unit tests for Voiceflow and chatbot-related server components to ensure reliability, stability, and maintainability of 
 backend services.<br>
-<b>Skills:</b> Odoo · Express.js · Astro · Shopify · Unity · Unit Testing`,
+<b>Skills:</b> Odoo · Express.js · Astro · Vector Database · Shopify · Unity · Unit Testing`,
     sequence: { $numberInt: "5" },
   },
   {

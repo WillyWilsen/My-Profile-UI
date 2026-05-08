@@ -35,26 +35,6 @@ backend services.<br>
     sequence: { $numberInt: "5" },
   },
   {
-    _id: { $oid: "647b19f827b072d12d76ac11" },
-    from: "Feb 2025",
-    to: "June 2025",
-    job_position: "AI Engineer Cohort",
-    job_type: "Self-employed",
-    company: "Laskar AI",
-    description: `1. Studied the fundamentals of Artificial Intelligence to understand basic AI concepts and applications.<br>
-2. Learned the principles of data visualization to effectively present and interpret data.<br>
-3. Started programming using Python as a foundation for data-related work.<br>
-4. Acquired skills in data analysis using Python libraries such as Pandas and NumPy.<br>
-5. Gained an introduction to machine learning, covering basic models and workflows.<br>
-6. Explored how to build and develop machine learning models from scratch.<br>
-7. Applied machine learning techniques to real-world problems in a practical setting.<br>
-8. Learned how to implement and deploy data science solutions across various domains.<br>
-9. Studied how to design and build complete machine learning systems.<br>
-10. In addition to technical learning, received soft skills training and completed a capstone project as a final assignment.<br>
-<b>Skills:</b> Artificial Intelligence (AI) · Machine Learning · Deep Learning · Data Science · MLflow · Prometheus.io · Grafana`,
-    sequence: { $numberInt: "4" },
-  },
-  {
     _id: { $oid: "647b19f827b072d12d76ac10" },
     from: "Nov 2022",
     to: "May 2025",
